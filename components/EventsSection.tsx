@@ -1,12 +1,23 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Clock, Calendar } from "lucide-react";
 import { WEDDING_CONFIG } from "@/lib/constants";
 import { ANIMATION_VARIANTS } from "@/lib/theme";
 
+type EventType = "ceremony" | "reception";
+
 export default function EventsSection() {
+  const [selectedEvent, setSelectedEvent] = useState<EventType>("ceremony");
   const { ceremony, reception } = WEDDING_CONFIG.events;
+
+  const getMapEmbedUrl = (address: string) => {
+    // Free embed version - không cần API key
+    return `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=m&z=15&output=embed`;
+  };
+
+  const selectedAddress = selectedEvent === "ceremony" ? ceremony.address : reception.address;
 
   return (
     <section id="events" className="py-20 md:py-32 bg-[var(--color-bg-primary)]">
@@ -38,8 +49,12 @@ export default function EventsSection() {
             viewport={{ once: true, margin: "-50px" }}
             variants={ANIMATION_VARIANTS.fadeInLeft}
             transition={{ duration: 0.8 }}
-            whileHover={{ y: -5 }}
-            className="bg-gradient-to-br from-[var(--color-bg-secondary)] to-white rounded-2xl p-8 shadow-lg border border-[var(--color-border-light)]"
+            onClick={() => setSelectedEvent("ceremony")}
+            className={`bg-gradient-to-br from-[var(--color-bg-secondary)] to-white rounded-2xl p-8 shadow-lg border-2 cursor-pointer transition-all ${
+              selectedEvent === "ceremony"
+                ? "border-[var(--color-primary)] ring-2 ring-[var(--color-primary-light)]"
+                : "border-[var(--color-border-light)] hover:border-[var(--color-primary-light)]"
+            }`}
           >
             <div className="text-center">
               <div className="w-16 h-16 bg-[var(--color-primary-lighter)] rounded-full flex items-center justify-center mx-auto mb-6">
@@ -65,14 +80,16 @@ export default function EventsSection() {
                 <p className="text-sm text-[var(--color-text-muted)]">{ceremony.address}</p>
               </div>
 
-              <a
-                href={ceremony.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-8 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-8 py-3 rounded-full text-sm font-medium transition-colors"
-              >
-                Xem bản đồ
-              </a>
+              {selectedEvent === "ceremony" && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="mt-6 inline-flex items-center gap-2 text-[var(--color-primary)] text-sm font-medium"
+                >
+                  <MapPin className="w-4 h-4" />
+                  Đang xem bản đồ
+                </motion.div>
+              )}
             </div>
           </motion.div>
 
@@ -83,8 +100,12 @@ export default function EventsSection() {
             viewport={{ once: true, margin: "-50px" }}
             variants={ANIMATION_VARIANTS.fadeInRight}
             transition={{ duration: 0.8, delay: 0.1 }}
-            whileHover={{ y: -5 }}
-            className="bg-gradient-to-br from-[var(--color-bg-secondary)] to-white rounded-2xl p-8 shadow-lg border border-[var(--color-border-light)]"
+            onClick={() => setSelectedEvent("reception")}
+            className={`bg-gradient-to-br from-[var(--color-bg-secondary)] to-white rounded-2xl p-8 shadow-lg border-2 cursor-pointer transition-all ${
+              selectedEvent === "reception"
+                ? "border-[var(--color-primary)] ring-2 ring-[var(--color-primary-light)]"
+                : "border-[var(--color-border-light)] hover:border-[var(--color-primary-light)]"
+            }`}
           >
             <div className="text-center">
               <div className="w-16 h-16 bg-[var(--color-primary-lighter)] rounded-full flex items-center justify-center mx-auto mb-6">
@@ -110,17 +131,60 @@ export default function EventsSection() {
                 <p className="text-sm text-[var(--color-text-muted)]">{reception.address}</p>
               </div>
 
-              <a
-                href={reception.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-8 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-8 py-3 rounded-full text-sm font-medium transition-colors"
-              >
-                Xem bản đồ
-              </a>
+              {selectedEvent === "reception" && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="mt-6 inline-flex items-center gap-2 text-[var(--color-primary)] text-sm font-medium"
+                >
+                  <MapPin className="w-4 h-4" />
+                  Đang xem bản đồ
+                </motion.div>
+              )}
             </div>
           </motion.div>
         </div>
+
+        {/* Google Maps Embed */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={ANIMATION_VARIANTS.fadeInUp}
+          transition={{ duration: 0.8 }}
+          className="mt-12"
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedEvent}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-2xl overflow-hidden shadow-lg border border-[var(--color-border-light)]"
+            >
+              <div className="bg-[var(--color-bg-secondary)] px-6 py-4 flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-[var(--color-primary)]" />
+                <span className="text-[var(--color-text-primary)] font-medium">
+                  {selectedEvent === "ceremony" ? ceremony.venue : reception.venue}
+                </span>
+                <span className="text-[var(--color-text-muted)] text-sm">
+                  - {selectedAddress}
+                </span>
+              </div>
+              <iframe
+                src={getMapEmbedUrl(selectedAddress)}
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
 
         {/* Couple Image */}
         <motion.div

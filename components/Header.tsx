@@ -61,8 +61,11 @@ export default function Header() {
           </nav>
 
           {/* RSVP Button */}
-          <button className="hidden md:block bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors">
-            RSVP
+          <button 
+            onClick={() => scrollToSection('rsvp')}
+            className="hidden md:block bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors"
+          >
+            Xác Nhận Tham Dự
           </button>
 
           {/* Mobile Menu Button */}
@@ -96,8 +99,11 @@ export default function Header() {
               </button>
             ))}
             <div className="px-6 py-3">
-              <button className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors">
-                RSVP
+              <button 
+                onClick={() => scrollToSection('rsvp')}
+                className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors"
+              >
+                Xác Nhận Tham Dự
               </button>
             </div>
           </nav>

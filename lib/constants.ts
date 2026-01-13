@@ -10,12 +10,12 @@ export const WEDDING_CONFIG = {
   },
 
   // Wedding Date
-  weddingDate: "2026-03-15",
-  weddingDateDisplay: "15 Tháng 3, 2026",
+  weddingDate: "2026-07-05",
+  weddingDateDisplay: "05 Tháng 7, 2026",
 
   // Hero Section
   hero: {
-    backgroundImage: "/images/hero-couple.jpg",
+    backgroundImage: "/images/hero-couple.png",
     subtitle: "Chúng tôi sắp kết hôn",
     location: "Thành phố Hồ Chí Minh, Việt Nam",
   },
@@ -28,7 +28,7 @@ export const WEDDING_CONFIG = {
       {
         id: 1,
         title: "Lần Đầu Gặp Gỡ",
-        date: "Tháng 6, 2020",
+        date: "Tháng 3, 2020",
         description:
           "Chúng tôi gặp nhau lần đầu tại một buổi họp mặt bạn bè. Ánh mắt đầu tiên đã khiến cả hai không thể quên được nhau.",
         image: "/images/story-1.jpg",
@@ -37,7 +37,7 @@ export const WEDDING_CONFIG = {
       {
         id: 2,
         title: "Hẹn Hò Đầu Tiên",
-        date: "Tháng 8, 2020",
+        date: "Tháng 4, 2020",
         description:
           "Buổi hẹn hò đầu tiên tại quán cà phê nhỏ, nơi chúng tôi trò chuyện suốt nhiều giờ và nhận ra có rất nhiều điểm chung.",
         image: "/images/story-2.jpg",
@@ -74,20 +74,20 @@ export const WEDDING_CONFIG = {
     title: "Ngày Trọng Đại",
     subtitle: "Chúng tôi rất hân hạnh được đón tiếp quý khách",
     ceremony: {
-      title: "Lễ Cưới",
-      date: "15 Tháng 3, 2026",
+      title: "Lễ Cưới Nhà Gái",
+      date: "05 Tháng 7, 2026",
       time: "10:00 - 12:00",
-      venue: "Nhà Thờ Đức Bà",
-      address: "01 Công xã Paris, Quận 1, TP.HCM",
-      mapUrl: "https://maps.google.com/?q=Nhà+Thờ+Đức+Bà+Sài+Gòn",
+      venue: "Tại Nhà Gái",
+      address: "25/10 Phan Chu Trinh, Phường Lâm Viên, Đà Lạt, Lâm Đồng 670000, Vietnam",
+      mapUrl: "https://maps.google.com/?q=25%2F10+Phan+Chu+Trinh%2C+L%C3%A2m+Vi%C3%AAn%2C+%C4%90%C3%A0+L%E1%BA%A1t%2C+L%C3%A2m+%C4%90%E1%BB%93ng",
     },
     reception: {
-      title: "Tiệc Cưới",
-      date: "15 Tháng 3, 2026",
+      title: "Tiệc Cưới Nhà Trai",
+      date: "05 Tháng 7, 2026",
       time: "18:00 - 22:00",
-      venue: "Khách sạn Rex Sài Gòn",
-      address: "141 Nguyễn Huệ, Quận 1, TP.HCM",
-      mapUrl: "https://maps.google.com/?q=Rex+Hotel+Saigon",
+      venue: "Trung Tâm Hội Nghị & Tiệc Cưới Pavillon Tân Sơn Nhất",
+      address: "Trường Sơn, Phường 2, Tân Bình, TP.HCM, Vietnam",
+      mapUrl: "https://maps.google.com/?q=Pavillon+Tan+Son+Nhat+Wedding+Hall",
     },
   },
 
@@ -100,16 +100,16 @@ export const WEDDING_CONFIG = {
       {
         id: 1,
         title: "Mừng Cưới Chú Rể",
-        bankName: "Vietcombank",
-        accountNumber: "1234567890",
+        bankName: "BIDV",
+        accountNumber: "0868212741",
         accountHolder: "NGUYEN DUC NAM",
         qrCode: "/images/qr-groom.png",
       },
       {
         id: 2,
         title: "Mừng Cưới Cô Dâu",
-        bankName: "Techcombank",
-        accountNumber: "0987654321",
+        bankName: "BIDV",
+        accountNumber: "8834834787",
         accountHolder: "DANG THI MY HIEN",
         qrCode: "/images/qr-bride.png",
       },

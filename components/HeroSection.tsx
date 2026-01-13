@@ -7,10 +7,13 @@ import { ANIMATION_VARIANTS } from "@/lib/theme";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image Placeholder */}
+      {/* Background Image - Update WEDDING_CONFIG.hero.backgroundImage in lib/constants.ts */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary-lighter)] via-white to-[var(--color-bg-tertiary)]">
-        <div className="absolute inset-0 bg-[url('/images/hero-couple.jpg')] bg-cover bg-center opacity-60" />
-        <div className="absolute inset-0 bg-black/30" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('${WEDDING_CONFIG.hero.backgroundImage}')` }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Content */}

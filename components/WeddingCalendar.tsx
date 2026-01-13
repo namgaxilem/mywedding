@@ -22,7 +22,27 @@ export default function WeddingCalendar() {
   });
   const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
 
-  const weddingDate = new Date(WEDDING_CONFIG.weddingDate);
+  // Lấy ngày cưới từ tiệc cưới nhà trai
+  // Parse "05 Tháng 7, 2026" thành Date object
+  const parseVietnameseDate = (dateStr: string) => {
+    const months: { [key: string]: number } = {
+      "Tháng 1": 0, "Tháng 2": 1, "Tháng 3": 2, "Tháng 4": 3,
+      "Tháng 5": 4, "Tháng 6": 5, "Tháng 7": 6, "Tháng 8": 7,
+      "Tháng 9": 8, "Tháng 10": 9, "Tháng 11": 10, "Tháng 12": 11
+    };
+    
+    // Format: "05 Tháng 7, 2026"
+    const match = dateStr.match(/(\d+)\s+(Tháng \d+),\s*(\d+)/);
+    if (!match) return new Date(); // fallback
+    
+    const day = parseInt(match[1]);
+    const monthStr = match[2];
+    const year = parseInt(match[3]);
+    
+    return new Date(year, months[monthStr], day);
+  };
+  
+  const weddingDate = parseVietnameseDate(WEDDING_CONFIG.events.reception.date);
 
   useEffect(() => {
     setCurrentMonth(new Date(weddingDate.getFullYear(), weddingDate.getMonth(), 1));
