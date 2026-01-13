@@ -195,10 +195,22 @@ export default function EventsSection() {
           transition={{ duration: 0.8 }}
           className="mt-16 flex justify-center"
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[var(--color-border)] shadow-xl bg-gradient-to-br from-[var(--color-bg-tertiary)] to-[var(--color-primary-lighter)]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[var(--color-text-muted)] text-sm">Hình cặp đôi</span>
-            </div>
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[var(--color-border)] shadow-xl">
+            <img
+              src={WEDDING_CONFIG.events.coupleImage}
+              alt="Cặp đôi"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                // Fallback if image doesn't exist
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                target.parentElement!.innerHTML = `
+                  <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[var(--color-bg-tertiary)] to-[var(--color-primary-lighter)]">
+                    <span class="text-[var(--color-text-muted)] text-sm">Hình cặp đôi</span>
+                  </div>
+                `;
+              }}
+            />
           </div>
         </motion.div>
       </div>

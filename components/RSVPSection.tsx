@@ -146,7 +146,7 @@ export default function RSVPSection() {
               disabled={status === "loading"}
               whileHover={{ scale: status === "loading" ? 1 : 1.02 }}
               whileTap={{ scale: status === "loading" ? 1 : 0.98 }}
-              className="w-full py-4 px-6 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white rounded-xl font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full py-4 px-6 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white rounded-xl font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
             >
               {status === "loading" ? (
                 <>

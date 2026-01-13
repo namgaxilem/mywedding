@@ -63,7 +63,7 @@ export default function HeroSection() {
         >
           <a
             href="#calendar"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors cursor-pointer"
           >
             <span className="text-sm tracking-wider">Khám phá câu chuyện</span>
             <motion.span

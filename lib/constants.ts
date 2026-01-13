@@ -15,7 +15,7 @@ export const WEDDING_CONFIG = {
 
   // Hero Section
   hero: {
-    backgroundImage: "/images/hero-couple.png",
+    backgroundImage: "/images/hero-couple.jpg",
     subtitle: "Chúng tôi sắp kết hôn",
     location: "Thành phố Hồ Chí Minh, Việt Nam",
   },
@@ -73,6 +73,7 @@ export const WEDDING_CONFIG = {
   events: {
     title: "Ngày Trọng Đại",
     subtitle: "Chúng tôi rất hân hạnh được đón tiếp quý khách",
+    coupleImage: "/images/couple-photo.jpg",
     ceremony: {
       title: "Lễ Cưới Nhà Gái",
       date: "05 Tháng 7, 2026",

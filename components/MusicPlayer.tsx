@@ -119,7 +119,7 @@ export default function MusicPlayer() {
           <div className="flex items-center gap-2">
             <button
               onClick={togglePlay}
-              className="w-10 h-10 rounded-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white flex items-center justify-center transition-colors"
+              className="w-10 h-10 rounded-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white flex items-center justify-center transition-colors cursor-pointer"
             >
               {isPlaying ? (
                 <Pause className="w-5 h-5" />
@@ -161,7 +161,7 @@ export default function MusicPlayer() {
           {/* Volume */}
           <button
             onClick={toggleMute}
-            className="flex-shrink-0 w-8 h-8 rounded-full hover:bg-[var(--color-bg-tertiary)] flex items-center justify-center transition-colors"
+            className="flex-shrink-0 w-8 h-8 rounded-full hover:bg-[var(--color-bg-tertiary)] flex items-center justify-center transition-colors cursor-pointer"
           >
             {isMuted ? (
               <VolumeX className="w-5 h-5 text-[var(--color-text-muted)]" />

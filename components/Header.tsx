@@ -38,7 +38,7 @@ export default function Header() {
           {/* Logo */}
           <a
             href="#"
-            className={`font-script text-xl md:text-2xl transition-colors ${
+            className={`font-script text-xl md:text-2xl transition-colors cursor-pointer ${
               isScrolled ? "text-[var(--color-primary)]" : "text-white"
             }`}
           >
@@ -51,7 +51,7 @@ export default function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-[var(--color-primary)] ${
+                className={`text-sm font-medium transition-colors hover:text-[var(--color-primary)] cursor-pointer ${
                   isScrolled ? "text-[var(--color-text-primary)]" : "text-white"
                 }`}
               >
@@ -63,7 +63,7 @@ export default function Header() {
           {/* RSVP Button */}
           <button 
             onClick={() => scrollToSection('rsvp')}
-            className="hidden md:block bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors"
+            className="hidden md:block bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer"
           >
             Xác Nhận Tham Dự
           </button>
@@ -71,7 +71,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors ${
+            className={`md:hidden p-2 transition-colors cursor-pointer ${
               isScrolled ? "text-[var(--color-text-primary)]" : "text-white"
             }`}
           >
@@ -93,7 +93,7 @@ export default function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-6 py-3 text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)] hover:text-[var(--color-primary)] text-left"
+                className="px-6 py-3 text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)] hover:text-[var(--color-primary)] text-left cursor-pointer"
               >
                 {item.label}
               </button>
@@ -101,7 +101,7 @@ export default function Header() {
             <div className="px-6 py-3">
               <button 
                 onClick={() => scrollToSection('rsvp')}
-                className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors"
+                className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer"
               >
                 Xác Nhận Tham Dự
               </button>
