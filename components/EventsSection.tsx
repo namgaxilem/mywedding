@@ -3,67 +3,73 @@
 import { motion } from "framer-motion";
 import { MapPin, Clock, Calendar } from "lucide-react";
 import { WEDDING_CONFIG } from "@/lib/constants";
+import { ANIMATION_VARIANTS } from "@/lib/theme";
 
 export default function EventsSection() {
   const { ceremony, reception } = WEDDING_CONFIG.events;
 
   return (
-    <section id="events" className="py-20 md:py-32 bg-white">
+    <section id="events" className="py-20 md:py-32 bg-[var(--color-bg-primary)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={ANIMATION_VARIANTS.fadeInDown}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-script text-4xl md:text-5xl text-pink-600 mb-4">
+          <h2 className="font-script text-4xl md:text-5xl text-[var(--color-primary)] mb-4">
             {WEDDING_CONFIG.events.title}
           </h2>
-          <p className="text-gray-500 text-sm tracking-widest uppercase">
+          <p className="text-[var(--color-text-muted)] text-sm tracking-widest uppercase">
             {WEDDING_CONFIG.events.subtitle}
           </p>
-          <div className="w-24 h-0.5 bg-pink-300 mx-auto mt-6" />
+          <div className="w-24 h-0.5 bg-[var(--color-primary-light)] mx-auto mt-6" />
         </motion.div>
 
         {/* Events Grid */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Ceremony Card */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-pink-50 to-white rounded-2xl p-8 shadow-lg border border-pink-100"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={ANIMATION_VARIANTS.fadeInLeft}
+            transition={{ duration: 0.8 }}
+            whileHover={{ y: -5 }}
+            className="bg-gradient-to-br from-[var(--color-bg-secondary)] to-white rounded-2xl p-8 shadow-lg border border-[var(--color-border-light)]"
           >
             <div className="text-center">
-              <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-[var(--color-primary-lighter)] rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">💒</span>
               </div>
-              <h3 className="font-script text-2xl md:text-3xl text-gray-800 mb-6">
+              <h3 className="font-script text-2xl md:text-3xl text-[var(--color-text-primary)] mb-6">
                 {ceremony.title}
               </h3>
 
-              <div className="space-y-4 text-gray-600">
+              <div className="space-y-4 text-[var(--color-text-secondary)]">
                 <div className="flex items-center justify-center gap-3">
-                  <Calendar className="w-5 h-5 text-pink-500" />
+                  <Calendar className="w-5 h-5 text-[var(--color-primary)]" />
                   <span>{ceremony.date}</span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
-                  <Clock className="w-5 h-5 text-pink-500" />
+                  <Clock className="w-5 h-5 text-[var(--color-primary)]" />
                   <span>{ceremony.time}</span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
-                  <MapPin className="w-5 h-5 text-pink-500" />
+                  <MapPin className="w-5 h-5 text-[var(--color-primary)]" />
                   <span>{ceremony.venue}</span>
                 </div>
-                <p className="text-sm text-gray-500">{ceremony.address}</p>
+                <p className="text-sm text-[var(--color-text-muted)]">{ceremony.address}</p>
               </div>
 
               <a
                 href={ceremony.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-8 bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-colors"
+                className="inline-block mt-8 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-8 py-3 rounded-full text-sm font-medium transition-colors"
               >
                 Xem bản đồ
               </a>
@@ -72,40 +78,43 @@ export default function EventsSection() {
 
           {/* Reception Card */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-pink-50 to-white rounded-2xl p-8 shadow-lg border border-pink-100"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={ANIMATION_VARIANTS.fadeInRight}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            whileHover={{ y: -5 }}
+            className="bg-gradient-to-br from-[var(--color-bg-secondary)] to-white rounded-2xl p-8 shadow-lg border border-[var(--color-border-light)]"
           >
             <div className="text-center">
-              <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-[var(--color-primary-lighter)] rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">🎉</span>
               </div>
-              <h3 className="font-script text-2xl md:text-3xl text-gray-800 mb-6">
+              <h3 className="font-script text-2xl md:text-3xl text-[var(--color-text-primary)] mb-6">
                 {reception.title}
               </h3>
 
-              <div className="space-y-4 text-gray-600">
+              <div className="space-y-4 text-[var(--color-text-secondary)]">
                 <div className="flex items-center justify-center gap-3">
-                  <Calendar className="w-5 h-5 text-pink-500" />
+                  <Calendar className="w-5 h-5 text-[var(--color-primary)]" />
                   <span>{reception.date}</span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
-                  <Clock className="w-5 h-5 text-pink-500" />
+                  <Clock className="w-5 h-5 text-[var(--color-primary)]" />
                   <span>{reception.time}</span>
                 </div>
                 <div className="flex items-center justify-center gap-3">
-                  <MapPin className="w-5 h-5 text-pink-500" />
+                  <MapPin className="w-5 h-5 text-[var(--color-primary)]" />
                   <span>{reception.venue}</span>
                 </div>
-                <p className="text-sm text-gray-500">{reception.address}</p>
+                <p className="text-sm text-[var(--color-text-muted)]">{reception.address}</p>
               </div>
 
               <a
                 href={reception.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-8 bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-colors"
+                className="inline-block mt-8 bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-8 py-3 rounded-full text-sm font-medium transition-colors"
               >
                 Xem bản đồ
               </a>
@@ -115,14 +124,16 @@ export default function EventsSection() {
 
         {/* Couple Image */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
+          variants={ANIMATION_VARIANTS.scaleIn}
+          transition={{ duration: 0.8 }}
           className="mt-16 flex justify-center"
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-pink-200 shadow-xl bg-gradient-to-br from-pink-100 to-pink-200">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[var(--color-border)] shadow-xl bg-gradient-to-br from-[var(--color-bg-tertiary)] to-[var(--color-primary-lighter)]">
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-pink-400 text-sm">Hình cặp đôi</span>
+              <span className="text-[var(--color-text-muted)] text-sm">Hình cặp đôi</span>
             </div>
           </div>
         </motion.div>

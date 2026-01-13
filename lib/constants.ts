@@ -124,11 +124,57 @@ export const WEDDING_CONFIG = {
 
   // Navigation
   navigation: [
+    { id: "calendar", label: "Lịch Cưới" },
     { id: "story", label: "Câu Chuyện" },
     { id: "gallery", label: "Khoảnh Khắc" },
     { id: "events", label: "Sự Kiện" },
+    { id: "rsvp", label: "Xác Nhận" },
     { id: "wishes", label: "Lời Chúc" },
   ],
 };
+
+// Gallery Images Configuration
+// Add your wedding photos here. Each image needs:
+// - src: path to image (place images in /public/images/gallery/)
+// - alt: description for accessibility
+// - width & height: actual image dimensions (for proper aspect ratio)
+export const GALLERY_IMAGES = [
+  {
+    src: "/images/gallery/photo-1.jpg",
+    alt: "Ảnh cưới 1",
+    width: 1200,
+    height: 800,
+  },
+  {
+    src: "/images/gallery/photo-2.jpg",
+    alt: "Ảnh cưới 2",
+    width: 800,
+    height: 1200,
+  },
+  {
+    src: "/images/gallery/photo-3.jpg",
+    alt: "Ảnh cưới 3",
+    width: 1200,
+    height: 800,
+  },
+  {
+    src: "/images/gallery/photo-4.jpg",
+    alt: "Ảnh cưới 4",
+    width: 1200,
+    height: 800,
+  },
+  {
+    src: "/images/gallery/photo-5.jpg",
+    alt: "Ảnh cưới 5",
+    width: 800,
+    height: 1200,
+  },
+  {
+    src: "/images/gallery/photo-6.jpg",
+    alt: "Ảnh cưới 6",
+    width: 1200,
+    height: 800,
+  },
+];
 
 export type WeddingConfig = typeof WEDDING_CONFIG;

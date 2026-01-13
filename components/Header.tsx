@@ -39,7 +39,7 @@ export default function Header() {
           <a
             href="#"
             className={`font-script text-xl md:text-2xl transition-colors ${
-              isScrolled ? "text-pink-600" : "text-white"
+              isScrolled ? "text-[var(--color-primary)]" : "text-white"
             }`}
           >
             {WEDDING_CONFIG.groom.shortName} & {WEDDING_CONFIG.bride.shortName}
@@ -51,8 +51,8 @@ export default function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors hover:text-pink-500 ${
-                  isScrolled ? "text-gray-700" : "text-white"
+                className={`text-sm font-medium transition-colors hover:text-[var(--color-primary)] ${
+                  isScrolled ? "text-[var(--color-text-primary)]" : "text-white"
                 }`}
               >
                 {item.label}
@@ -61,7 +61,7 @@ export default function Header() {
           </nav>
 
           {/* RSVP Button */}
-          <button className="hidden md:block bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors">
+          <button className="hidden md:block bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors">
             RSVP
           </button>
 
@@ -69,7 +69,7 @@ export default function Header() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 transition-colors ${
-              isScrolled ? "text-gray-700" : "text-white"
+              isScrolled ? "text-[var(--color-text-primary)]" : "text-white"
             }`}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -90,13 +90,13 @@ export default function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-6 py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-500 text-left"
+                className="px-6 py-3 text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)] hover:text-[var(--color-primary)] text-left"
               >
                 {item.label}
               </button>
             ))}
             <div className="px-6 py-3">
-              <button className="w-full bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors">
+              <button className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white px-6 py-2 rounded-full text-sm font-medium transition-colors">
                 RSVP
               </button>
             </div>
