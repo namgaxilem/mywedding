@@ -95,7 +95,7 @@ export const WEDDING_CONFIG = {
     subtitle: "Chúng tôi rất hân hạnh được đón tiếp quý khách",
     coupleImage: "/images/couple-photo.jpg",
     ceremony: {
-      title: "Lễ Cưới Nhà Gái",
+      title: "Tiệc Cưới Nhà Gái",
       date: "05 Tháng 7, 2026",
       time: "10:00 - 12:00",
       venue: "Tại Nhà Gái",

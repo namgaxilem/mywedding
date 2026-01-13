@@ -1,12 +1,86 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Heart, Flower2, Sparkles } from "lucide-react";
+import { MapPin, Heart, Flower2, Sparkles, X, ExternalLink } from "lucide-react";
 import { WEDDING_CONFIG } from "@/lib/constants";
 import { ANIMATION_VARIANTS } from "@/lib/theme";
 
 export default function VenueSection() {
   const { venue, groom, bride } = WEDDING_CONFIG;
+  const [selectedVenue, setSelectedVenue] = useState<typeof WEDDING_CONFIG.venue.brideFamily | null>(null);
+
+  const MapModal = ({ venue, onClose }: { venue: typeof WEDDING_CONFIG.venue.brideFamily; onClose: () => void }) => {
+    // Convert Google Maps URL to embed URL
+    const embedUrl = venue.mapUrl.replace(
+      "https://maps.google.com/?q=",
+      "https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q="
+    );
+
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm"
+        onClick={onClose}
+      >
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl mx-4 max-h-[90vh] overflow-hidden"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900">{venue.title}</h3>
+              <p className="text-gray-600">{venue.familyName}</p>
+            </div>
+            <button
+              onClick={onClose}
+              className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+            >
+              <X className="w-5 h-5 text-gray-500" />
+            </button>
+          </div>
+
+          {/* Address */}
+          <div className="px-6 py-4 bg-gray-50">
+            <div className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-[var(--color-primary)] mt-0.5 flex-shrink-0" />
+              <p className="text-gray-700">{venue.address}</p>
+            </div>
+          </div>
+
+          {/* Map Embed */}
+          <div className="relative h-96 md:h-[500px] bg-gray-100">
+            <iframe
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(venue.address)}&t=m&z=15&output=embed`}
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            
+            {/* Overlay with open in new tab button */}
+            <div className="absolute bottom-4 right-4">
+              <a
+                href={venue.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span className="text-sm font-medium">Mở trong Google Maps</span>
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    );
+  };
 
   const venues = [
     {
@@ -102,15 +176,13 @@ export default function VenueSection() {
               </div>
 
               {/* Map Button */}
-              <a
-                href={item.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white rounded-full text-[var(--color-primary)] font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              <button
+                onClick={() => setSelectedVenue(item)}
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white rounded-full text-[var(--color-primary)] font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
               >
                 <MapPin className="w-4 h-4" />
                 Xem bản đồ
-              </a>
+              </button>
 
               {/* Decorative Element */}
               <div className="absolute top-4 right-4 opacity-10">
@@ -137,6 +209,14 @@ export default function VenueSection() {
           </div>
         </motion.div>
       </div>
+
+      {/* Map Modal */}
+      {selectedVenue && (
+        <MapModal
+          venue={selectedVenue}
+          onClose={() => setSelectedVenue(null)}
+        />
+      )}
     </section>
   );
 }
