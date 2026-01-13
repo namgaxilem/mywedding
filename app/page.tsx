@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import WeddingCalendar from "@/components/WeddingCalendar";
+import VenueSection from "@/components/VenueSection";
 import StorySection from "@/components/StorySection";
 import GallerySection from "@/components/GallerySection";
 import EventsSection from "@/components/EventsSection";
@@ -20,6 +21,7 @@ export default function Home() {
       <main className="pb-20">
         <HeroSection />
         <WeddingCalendar />
+        <VenueSection />
         <StorySection />
         <GallerySection />
         <EventsSection />

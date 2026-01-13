@@ -69,6 +69,26 @@ export const WEDDING_CONFIG = {
     ],
   },
 
+  // Venue Section (Lễ Vu Quy & Lễ Tân Hôn)
+  venue: {
+    title: "Địa Điểm Lễ Cưới",
+    subtitle: "Trân trọng kính mời quý khách đến dự",
+    brideFamily: {
+      title: "Lễ Vu Quy",
+      familyName: "Tại Gia Đình Nhà Gái",
+      description: "Lễ xuất giá của cô dâu",
+      address: "Vườn hoa Cẩm Tú Cầu, Phường 9, Thành phố Đà Lạt, Lâm Đồng",
+      mapUrl: "https://maps.google.com/?q=Vuon+hoa+Cam+Tu+Cau+Da+Lat",
+    },
+    groomFamily: {
+      title: "Lễ Tân Hôn",
+      familyName: "Tại Gia Đình Nhà Trai",
+      description: "Lễ đón dâu về nhà chồng",
+      address: "1/49 Đặng Thùy Trâm, Phường Bình Lợi Trung, Thành phố Thủ Đức, TP.HCM",
+      mapUrl: "https://maps.google.com/?q=1%2F49+Dang+Thuy+Tram+Binh+Loi+Trung+Thu+Duc",
+    },
+  },
+
   // The Big Day Section
   events: {
     title: "Ngày Trọng Đại",
