@@ -102,7 +102,7 @@ export const WEDDING_CONFIG = {
         title: "Mừng Cưới Chú Rể",
         bankName: "BIDV",
         accountNumber: "0868212741",
-        accountHolder: "NGUYEN DUC NAM",
+        accountHolder: "Nguyễn Đức Nam",
         qrCode: "/images/qr-groom.png",
       },
       {
@@ -110,7 +110,7 @@ export const WEDDING_CONFIG = {
         title: "Mừng Cưới Cô Dâu",
         bankName: "BIDV",
         accountNumber: "8834834787",
-        accountHolder: "DANG THI MY HIEN",
+        accountHolder: "Đặng Thị Mỹ Hiền",
         qrCode: "/images/qr-bride.png",
       },
     ],
