@@ -10,7 +10,10 @@ export default function MusicPlayer() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [rotation, setRotation] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const animationRef = useRef<number | null>(null);
+  const lastTimeRef = useRef<number>(0);
 
   useEffect(() => {
     const audio = new Audio("/music/wedding-song.mp3");
@@ -47,6 +50,36 @@ export default function MusicPlayer() {
       audio.pause();
     };
   }, []);
+
+  // Smooth rotation animation
+  useEffect(() => {
+    if (isPlaying) {
+      lastTimeRef.current = performance.now();
+      
+      const animate = (currentTime: number) => {
+        const deltaTime = currentTime - lastTimeRef.current;
+        lastTimeRef.current = currentTime;
+        
+        // Rotate 120 degrees per second (360 degrees in 3 seconds)
+        setRotation(prev => (prev + (120 * deltaTime) / 1000) % 360);
+        
+        animationRef.current = requestAnimationFrame(animate);
+      };
+      
+      animationRef.current = requestAnimationFrame(animate);
+    } else {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+    }
+    
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isPlaying]);
 
   const togglePlay = () => {
     if (audioRef.current) {
@@ -97,8 +130,8 @@ export default function MusicPlayer() {
           {/* Music Icon */}
           <div className="flex-shrink-0">
             <motion.div
-              animate={isPlaying ? { rotate: 360 } : { rotate: 0 }}
-              transition={{ duration: 3, repeat: isPlaying ? Infinity : 0, ease: "linear" }}
+              animate={{ rotate: rotation }}
+              transition={{ type: "tween", ease: "linear", duration: 0 }}
               className="w-10 h-10 rounded-full bg-[var(--color-primary-lighter)] flex items-center justify-center"
             >
               <Music className="w-5 h-5 text-[var(--color-primary)]" />

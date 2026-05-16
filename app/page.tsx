@@ -6,7 +6,6 @@ import StorySection from "@/components/StorySection";
 import GallerySection from "@/components/GallerySection";
 import EventsSection from "@/components/EventsSection";
 import RSVPSection from "@/components/RSVPSection";
-import WishesSection from "@/components/WishesSection";
 import GuestWishes from "@/components/GuestWishes";
 import SeatingChart from "@/components/SeatingChart";
 import Footer from "@/components/Footer";
@@ -26,7 +25,6 @@ export default function Home() {
         <GallerySection />
         <EventsSection />
         <RSVPSection />
-        <WishesSection />
         <GuestWishes />
         <SeatingChart />
       </main>

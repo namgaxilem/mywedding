@@ -4,28 +4,28 @@
   --background: #ffffff;
   --foreground: #171717;
   
-  /* Theme Colors - Easy to customize (Red-Pink theme) */
-  --color-primary: #d4626a;
-  --color-primary-light: #e88a90;
-  --color-primary-lighter: #fdf0f1;
-  --color-primary-dark: #b84850;
-  
-  --color-secondary: #c98a8e;
-  --color-secondary-light: #e0b3b6;
-  
-  --color-accent: #e8a4a8;
-  --color-accent-light: #f5d4d6;
-  
-  --color-text-primary: #4a4a4a;
-  --color-text-secondary: #6b6b6b;
-  --color-text-muted: #9a9a9a;
-  
+  /* Theme Colors - Prewedding: Pure White + Bright Yellow Florals + Garden Green */
+  --color-primary: #E5A91D;
+  --color-primary-light: #EDBE52;
+  --color-primary-lighter: #FEF6DC;
+  --color-primary-dark: #B88410;
+
+  --color-secondary: #4e7a52;
+  --color-secondary-light: #7aaa80;
+
+  --color-accent: #F2D060;
+  --color-accent-light: #FAF0C0;
+
+  --color-text-primary: #1c1c18;
+  --color-text-secondary: #444440;
+  --color-text-muted: #747470;
+
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #fef9f9;
-  --color-bg-tertiary: #fdf4f4;
-  
-  --color-border: #f0d8da;
-  --color-border-light: #f8eced;
+  --color-bg-secondary: #fdfcf6;
+  --color-bg-tertiary: #faf8ec;
+
+  --color-border: #E8D090;
+  --color-border-light: #F2E8C0;
 }
 
 @theme inline {

@@ -33,29 +33,29 @@ export default function VenueSection() {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-200">
+          <div className="flex items-center justify-between p-6 border-b border-[var(--color-border-light)]">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">{venue.title}</h3>
-              <p className="text-gray-600">{venue.familyName}</p>
+              <h3 className="text-xl font-semibold text-[var(--color-text-primary)]">{venue.title}</h3>
+              <p className="text-[var(--color-text-secondary)]">{venue.familyName}</p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-full hover:bg-[var(--color-bg-tertiary)] transition-colors"
             >
-              <X className="w-5 h-5 text-gray-500" />
+              <X className="w-5 h-5 text-[var(--color-text-muted)]" />
             </button>
           </div>
 
           {/* Address */}
-          <div className="px-6 py-4 bg-gray-50">
+          <div className="px-6 py-4 bg-[var(--color-bg-secondary)]">
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[var(--color-primary)] mt-0.5 flex-shrink-0" />
-              <p className="text-gray-700">{venue.address}</p>
+              <p className="text-[var(--color-text-secondary)]">{venue.address}</p>
             </div>
           </div>
 
           {/* Map Embed */}
-          <div className="relative h-96 md:h-[500px] bg-gray-100">
+          <div className="relative h-96 md:h-[500px] bg-[var(--color-bg-tertiary)]">
             <iframe
               src={`https://maps.google.com/maps?q=${encodeURIComponent(venue.address)}&t=m&z=15&output=embed`}
               className="w-full h-full border-0"
@@ -86,16 +86,16 @@ export default function VenueSection() {
     {
       ...venue.brideFamily,
       icon: Flower2,
-      gradient: "from-pink-50 to-rose-50",
-      iconColor: "text-rose-500",
-      borderColor: "border-rose-200",
+      gradient: "from-amber-50 to-yellow-50",
+      iconColor: "text-amber-600",
+      borderColor: "border-amber-200",
     },
     {
       ...venue.groomFamily,
       icon: Sparkles,
-      gradient: "from-blue-50 to-indigo-50",
-      iconColor: "text-indigo-500",
-      borderColor: "border-indigo-200",
+      gradient: "from-green-50 to-emerald-50",
+      iconColor: "text-emerald-700",
+      borderColor: "border-green-200",
     },
   ];
 

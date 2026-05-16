@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { WEDDING_CONFIG } from "@/lib/constants";
 import { ANIMATION_VARIANTS } from "@/lib/theme";
 
@@ -43,24 +42,6 @@ export default function WishesSection() {
               <h3 className="font-script text-xl md:text-2xl text-[var(--color-text-primary)] mb-6">
                 {account.title}
               </h3>
-
-              {/* QR Code Placeholder */}
-              <div className="relative w-48 h-48 mx-auto mb-6 bg-gradient-to-br from-[var(--color-bg-secondary)] to-[var(--color-bg-tertiary)] rounded-xl overflow-hidden">
-                <Image
-                  src={account.qrCode}
-                  alt={`QR Code - ${account.title}`}
-                  fill
-                  className="object-contain p-4"
-                />
-                {/* Placeholder for missing QR */}
-                <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-bg-secondary)]">
-                  <div className="text-center">
-                    <div className="w-32 h-32 border-2 border-dashed border-[var(--color-border)] rounded-lg flex items-center justify-center mx-auto">
-                      <span className="text-[var(--color-text-muted)] text-xs">QR Code</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <div className="space-y-2 text-[var(--color-text-secondary)]">
                 <p className="font-medium text-[var(--color-primary)]">{account.bankName}</p>

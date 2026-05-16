@@ -36,7 +36,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex items-center justify-center gap-2 text-white/70 text-sm">
             <span>Made with</span>
-            <Heart className="w-4 h-4 fill-current text-red-300" />
+            <Heart className="w-4 h-4 fill-current text-amber-200" />
             <span>for our special day</span>
           </div>
 

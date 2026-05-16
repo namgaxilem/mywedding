@@ -65,25 +65,25 @@ export default function FallingFlowers() {
           >
             <path
               d="M12 2C12 2 14 6 14 9C14 12 12 14 12 14C12 14 10 12 10 9C10 6 12 2 12 2Z"
-              fill="#FFB6C1"
-              opacity="0.7"
+              fill="#FFE680"
+              opacity="0.75"
             />
             <path
               d="M12 14C12 14 16 12 19 12C22 12 24 14 24 14C24 14 22 16 19 16C16 16 12 14 12 14Z"
-              fill="#FFC0CB"
-              opacity="0.6"
+              fill="#FFF9C4"
+              opacity="0.7"
             />
             <path
               d="M12 14C12 14 8 12 5 12C2 12 0 14 0 14C0 14 2 16 5 16C8 16 12 14 12 14Z"
-              fill="#FFB6C1"
-              opacity="0.6"
+              fill="#FFE680"
+              opacity="0.7"
             />
             <path
               d="M12 14C12 14 14 18 14 21C14 24 12 26 12 26C12 26 10 24 10 21C10 18 12 14 12 14Z"
-              fill="#FFC0CB"
-              opacity="0.7"
+              fill="#FFF9C4"
+              opacity="0.75"
             />
-            <circle cx="12" cy="14" r="2" fill="#FFD700" opacity="0.8" />
+            <circle cx="12" cy="14" r="2" fill="#c9a84c" opacity="0.9" />
           </svg>
         </motion.div>
       ))}

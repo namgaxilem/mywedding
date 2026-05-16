@@ -180,7 +180,7 @@ export default function WeddingCalendar() {
                   </div>
                   {item.hasHeart && (
                     <Heart
-                      className="absolute -top-2 -right-2 w-5 h-5 text-red-400 fill-red-400"
+                      className="absolute -top-2 -right-2 w-5 h-5 text-amber-400 fill-amber-400"
                       style={{ animation: "pulse 1.5s ease-in-out infinite" }}
                     />
                   )}

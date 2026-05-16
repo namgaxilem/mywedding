@@ -13,7 +13,7 @@ export default function HeroSection() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('${WEDDING_CONFIG.hero.backgroundImage}')` }}
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/30 to-[#3a3228]/50" />
       </div>
 
       {/* Content */}
