@@ -1,13 +1,12 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import WeddingCalendar from "@/components/WeddingCalendar";
+import CoupleIntro from "@/components/CoupleIntro";
 import VenueSection from "@/components/VenueSection";
 import StorySection from "@/components/StorySection";
 import GallerySection from "@/components/GallerySection";
 import EventsSection from "@/components/EventsSection";
 import RSVPSection from "@/components/RSVPSection";
 import GuestWishes from "@/components/GuestWishes";
-import SeatingChart from "@/components/SeatingChart";
 import Footer from "@/components/Footer";
 import FallingFlowers from "@/components/FallingFlowers";
 import MusicPlayer from "@/components/MusicPlayer";
@@ -17,16 +16,15 @@ export default function Home() {
     <>
       <FallingFlowers />
       <Header />
-      <main className="pb-20">
+      <main>
         <HeroSection />
-        <WeddingCalendar />
-        <VenueSection />
+        <CoupleIntro />
         <StorySection />
+        <VenueSection />
         <GallerySection />
         <EventsSection />
         <RSVPSection />
         <GuestWishes />
-        <SeatingChart />
       </main>
       <Footer />
       <MusicPlayer />

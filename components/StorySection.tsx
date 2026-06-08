@@ -55,10 +55,6 @@ export default function StorySection() {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  {/* Placeholder overlay for missing images */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-[var(--color-bg-tertiary)]/80">
-                    <span className="text-[var(--color-text-muted)] text-sm">Hình ảnh</span>
-                  </div>
                 </div>
               </motion.div>
 

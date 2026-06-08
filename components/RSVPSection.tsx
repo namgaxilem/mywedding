@@ -50,7 +50,7 @@ export default function RSVPSection() {
   };
 
   return (
-    <section id="rsvp" className="py-20 md:py-32 bg-[var(--color-bg-primary)]">
+    <section id="rsvp" className="pt-14 pb-20 md:pt-20 md:pb-32 bg-[var(--color-bg-primary)]">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

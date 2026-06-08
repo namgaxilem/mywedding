@@ -2,21 +2,16 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Heart, Flower2, Sparkles, X, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { MapPin, X, ExternalLink } from "lucide-react";
 import { WEDDING_CONFIG } from "@/lib/constants";
 import { ANIMATION_VARIANTS } from "@/lib/theme";
 
 export default function VenueSection() {
-  const { venue, groom, bride } = WEDDING_CONFIG;
-  const [selectedVenue, setSelectedVenue] = useState<typeof WEDDING_CONFIG.venue.brideFamily | null>(null);
+  const { venue } = WEDDING_CONFIG;
+  const [selectedVenue, setSelectedVenue] = useState<typeof venue.brideFamily | null>(null);
 
   const MapModal = ({ venue, onClose }: { venue: typeof WEDDING_CONFIG.venue.brideFamily; onClose: () => void }) => {
-    // Convert Google Maps URL to embed URL
-    const embedUrl = venue.mapUrl.replace(
-      "https://maps.google.com/?q=",
-      "https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q="
-    );
-
     return (
       <motion.div
         initial={{ opacity: 0 }}
@@ -36,22 +31,14 @@ export default function VenueSection() {
           <div className="flex items-center justify-between p-6 border-b border-[var(--color-border-light)]">
             <div>
               <h3 className="text-xl font-semibold text-[var(--color-text-primary)]">{venue.title}</h3>
-              <p className="text-[var(--color-text-secondary)]">{venue.familyName}</p>
+              <p className="text-[var(--color-text-secondary)]">{venue.address}</p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-full hover:bg-[var(--color-bg-tertiary)] transition-colors"
+              className="p-2 rounded-full hover:bg-[var(--color-bg-tertiary)] transition-colors cursor-pointer"
             >
               <X className="w-5 h-5 text-[var(--color-text-muted)]" />
             </button>
-          </div>
-
-          {/* Address */}
-          <div className="px-6 py-4 bg-[var(--color-bg-secondary)]">
-            <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-[var(--color-primary)] mt-0.5 flex-shrink-0" />
-              <p className="text-[var(--color-text-secondary)]">{venue.address}</p>
-            </div>
           </div>
 
           {/* Map Embed */}
@@ -64,7 +51,6 @@ export default function VenueSection() {
               referrerPolicy="no-referrer-when-downgrade"
             />
             
-            {/* Overlay with open in new tab button */}
             <div className="absolute bottom-4 right-4">
               <a
                 href={venue.mapUrl}
@@ -82,132 +68,91 @@ export default function VenueSection() {
     );
   };
 
-  const venues = [
-    {
-      ...venue.brideFamily,
-      icon: Flower2,
-      gradient: "from-amber-50 to-yellow-50",
-      iconColor: "text-amber-600",
-      borderColor: "border-amber-200",
-    },
-    {
-      ...venue.groomFamily,
-      icon: Sparkles,
-      gradient: "from-green-50 to-emerald-50",
-      iconColor: "text-emerald-700",
-      borderColor: "border-green-200",
-    },
-  ];
-
   return (
-    <section id="venue" className="py-16 md:py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="venue" className="py-16 md:py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 囍 Logo */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          variants={ANIMATION_VARIANTS.staggerContainer}
-          className="text-center mb-12"
+          variants={ANIMATION_VARIANTS.fadeInUp}
+          className="text-center mb-10"
         >
-          <motion.div variants={ANIMATION_VARIANTS.fadeInDown} className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-12 bg-[var(--color-primary)]"></div>
-            <Heart className="w-5 h-5 text-[var(--color-primary)] fill-[var(--color-primary)]" />
-            <div className="h-px w-12 bg-[var(--color-primary)]"></div>
-          </motion.div>
-          
-          <motion.h2
-            variants={ANIMATION_VARIANTS.fadeInDown}
-            className="font-script text-4xl md:text-5xl text-[var(--color-primary)] mb-4"
-          >
-            {venue.title}
-          </motion.h2>
-          
-          <motion.p
-            variants={ANIMATION_VARIANTS.fadeIn}
-            className="text-[var(--color-text-secondary)] text-lg max-w-2xl mx-auto"
-          >
-            {venue.subtitle}
-          </motion.p>
+          {/* Red circle 囍 */}
+          <div className="flex justify-center mb-0">
+            <div className="w-16 h-16 rounded-full border-[3px] border-red-600 flex items-center justify-center">
+              <span className="text-red-600 text-2xl font-bold leading-none">囍</span>
+            </div>
+          </div>
+
+          {/* Decorative image */}
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/images/deco.webp"
+              alt="Decoration"
+              width={120}
+              height={60}
+              className="object-contain"
+            />
+          </div>
         </motion.div>
 
-        {/* Venue Cards */}
+        {/* Two columns: NHÀ TRAI and NHÀ GÁI */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={ANIMATION_VARIANTS.staggerContainer}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid grid-cols-2 gap-8 md:gap-16"
         >
-          {venues.map((item, index) => (
-            <motion.div
-              key={item.title}
-              variants={ANIMATION_VARIANTS.slideInUp}
-              className={`relative bg-gradient-to-br ${item.gradient} rounded-2xl p-8 border ${item.borderColor} shadow-lg hover:shadow-xl transition-shadow duration-300`}
+          {/* Nhà Trai */}
+          <motion.div variants={ANIMATION_VARIANTS.fadeInLeft} className="text-center">
+            <h3 className="text-sm md:text-base font-semibold text-[var(--color-text-muted)] tracking-widest uppercase mb-3">
+              {venue.groomFamily.title}
+            </h3>
+            <p className="text-sm md:text-base font-bold text-[var(--color-text-primary)] uppercase">
+              {venue.groomFamily.fatherName}
+            </p>
+            <p className="text-sm md:text-base font-bold text-[var(--color-text-primary)] uppercase">
+              {venue.groomFamily.motherName}
+            </p>
+            <p className="text-xs md:text-sm text-[var(--color-text-muted)] mt-2">
+              {venue.groomFamily.address}
+            </p>
+            <button
+              onClick={() => setSelectedVenue(venue.groomFamily)}
+              className="mt-3 inline-flex items-center gap-1 text-xs text-[var(--color-primary)] hover:underline cursor-pointer"
             >
-              {/* Icon */}
-              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full bg-white shadow-md mb-6 ${item.iconColor}`}>
-                <item.icon className="w-7 h-7" />
-              </div>
+              <MapPin className="w-3 h-3" />
+              Xem bản đồ
+            </button>
+          </motion.div>
 
-              {/* Title */}
-              <h3 className="font-serif text-2xl font-semibold text-[var(--color-text-primary)] mb-1">
-                {item.title}
-              </h3>
-              
-              {/* Description */}
-              {"description" in item && item.description && (
-                <p className="text-sm text-[var(--color-text-muted)] italic mb-2">
-                  {item.description}
-                </p>
-              )}
-              
-              {/* Family Name */}
-              <p className="text-[var(--color-text-secondary)] font-medium mb-4">
-                {item.familyName}
-              </p>
-
-              {/* Address */}
-              <div className="flex items-start gap-3 mb-6">
-                <MapPin className="w-5 h-5 text-[var(--color-primary)] mt-0.5 flex-shrink-0" />
-                <p className="text-[var(--color-text-secondary)] leading-relaxed">
-                  {item.address}
-                </p>
-              </div>
-
-              {/* Map Button */}
-              <button
-                onClick={() => setSelectedVenue(item)}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white rounded-full text-[var(--color-primary)] font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-              >
-                <MapPin className="w-4 h-4" />
-                Xem bản đồ
-              </button>
-
-              {/* Decorative Element */}
-              <div className="absolute top-4 right-4 opacity-10">
-                <Heart className="w-20 h-20 text-[var(--color-primary)]" />
-              </div>
-            </motion.div>
-          ))}
+          {/* Nhà Gái */}
+          <motion.div variants={ANIMATION_VARIANTS.fadeInRight} className="text-center">
+            <h3 className="text-sm md:text-base font-semibold text-[var(--color-text-muted)] tracking-widest uppercase mb-3">
+              {venue.brideFamily.title}
+            </h3>
+            <p className="text-sm md:text-base font-bold text-[var(--color-text-primary)] uppercase">
+              {venue.brideFamily.fatherName}
+            </p>
+            <p className="text-sm md:text-base font-bold text-[var(--color-text-primary)] uppercase">
+              {venue.brideFamily.motherName}
+            </p>
+            <p className="text-xs md:text-sm text-[var(--color-text-muted)] mt-2">
+              {venue.brideFamily.address}
+            </p>
+            <button
+              onClick={() => setSelectedVenue(venue.brideFamily)}
+              className="mt-3 inline-flex items-center gap-1 text-xs text-[var(--color-primary)] hover:underline cursor-pointer"
+            >
+              <MapPin className="w-3 h-3" />
+              Xem bản đồ
+            </button>
+          </motion.div>
         </motion.div>
 
-        {/* Wedding Date Reminder */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={ANIMATION_VARIANTS.fadeIn}
-          className="mt-12 text-center"
-        >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-[var(--color-bg-tertiary)] rounded-full">
-            <Heart className="w-4 h-4 text-[var(--color-primary)] fill-[var(--color-primary)]" />
-            <span className="text-[var(--color-text-secondary)]">
-              Ngày cưới: <strong className="text-[var(--color-primary)]">{WEDDING_CONFIG.weddingDateDisplay}</strong>
-            </span>
-            <Heart className="w-4 h-4 text-[var(--color-primary)] fill-[var(--color-primary)]" />
-          </div>
-        </motion.div>
       </div>
 
       {/* Map Modal */}
