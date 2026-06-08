@@ -4,10 +4,13 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Music } from "lucide-react";
 
+const SONG_NAME = "Wedding Song - Nam & Hiền";
+
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [showTooltip, setShowTooltip] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -69,7 +72,20 @@ export default function MusicPlayer() {
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, type: "spring", stiffness: 200 }}
       className="fixed bottom-6 right-6 z-50"
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
     >
+      {/* Song name tooltip */}
+      {showTooltip && (
+        <motion.div
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="absolute right-full mr-3 top-1/2 -translate-y-1/2 whitespace-nowrap bg-white/95 backdrop-blur-sm text-[var(--color-text-primary)] text-xs font-medium px-3 py-1.5 rounded-full shadow-md border border-[var(--color-border-light)]"
+        >
+          {SONG_NAME}
+        </motion.div>
+      )}
+
       <button
         onClick={togglePlay}
         className="relative w-14 h-14 rounded-full cursor-pointer focus:outline-none group"
@@ -99,19 +115,24 @@ export default function MusicPlayer() {
           />
         </svg>
 
-        {/* Inner circle with icon */}
-        <motion.div
-          animate={{ rotate: isPlaying ? 360 : 0 }}
-          transition={
-            isPlaying
-              ? { repeat: Infinity, duration: 4, ease: "linear" }
-              : { duration: 0 }
-          }
+        {/* Inner circle with icon - uses CSS animation so it preserves rotation on pause */}
+        <div
           className="absolute inset-[5px] rounded-full bg-[var(--color-primary)] shadow-lg flex items-center justify-center group-hover:bg-[var(--color-primary-dark)] transition-colors"
+          style={{
+            animation: "spin 4s linear infinite",
+            animationPlayState: isPlaying ? "running" : "paused",
+          }}
         >
           <Music className="w-5 h-5 text-white" />
-        </motion.div>
+        </div>
       </button>
+
+      <style jsx>{`
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
     </motion.div>
   );
 }
