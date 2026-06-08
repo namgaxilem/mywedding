@@ -7,7 +7,7 @@ export const PREWEDDING_CONFIG = {
   basePath: "/images/prewedding",
 
   // Hình bìa (cover / hero)
-  coverImage: "FOOD8869.JPG",
+  coverImage: "FOOD9467.JPG",
 
   // Hình cổng
   gateImage: "FOOD9557.JPG",
@@ -83,7 +83,7 @@ export const WEDDING_CONFIG = {
     name: "Nguyễn Đức Nam",
     shortName: "Nam",
     role: "Chú Rể",
-    image: "/images/prewedding/FOOD8618.JPG",
+    image: "/images/prewedding/FOOD9793.JPG",
     description:
       "Một chàng trai yêu đời, luôn tìm thấy niềm vui trong những điều giản dị. Với quan điểm sống tích cực và luôn hết lòng vì gia đình, Nam tin rằng hạnh phúc đến từ sự chân thành và yêu thương.",
   },
@@ -91,7 +91,7 @@ export const WEDDING_CONFIG = {
     name: "Đặng Thị Mỹ Hiền",
     shortName: "Hiền",
     role: "Cô Dâu",
-    image: "/images/prewedding/FOOD9076.JPG",
+    image: "/images/prewedding/FOOD8487.JPG",
     description:
       "Một cô gái dịu dàng, tinh tế và đầy nhiệt huyết. Hiền luôn mang đến năng lượng tích cực cho những người xung quanh. Với trái tim ấm áp và tâm hồn lãng mạn, Hiền tin vào tình yêu đích thực.",
   },
@@ -146,14 +146,6 @@ export const WEDDING_CONFIG = {
   gallery: {
     title: "Khoảnh Khắc",
     subtitle: "Những kỷ niệm đẹp của chúng tôi",
-    images: [
-      { id: 1, src: "/images/gallery-1.jpg", alt: "Khoảnh khắc 1" },
-      { id: 2, src: "/images/gallery-2.jpg", alt: "Khoảnh khắc 2" },
-      { id: 3, src: "/images/gallery-3.jpg", alt: "Khoảnh khắc 3" },
-      { id: 4, src: "/images/gallery-4.jpg", alt: "Khoảnh khắc 4" },
-      { id: 5, src: "/images/gallery-5.jpg", alt: "Khoảnh khắc 5" },
-      { id: 6, src: "/images/gallery-6.jpg", alt: "Khoảnh khắc 6" },
-    ],
   },
 
   // Venue Section (Lễ Vu Quy & Lễ Tân Hôn)
@@ -180,7 +172,7 @@ export const WEDDING_CONFIG = {
   events: {
     title: "Ngày Trọng Đại",
     subtitle: "Chúng tôi rất hân hạnh được đón tiếp quý khách",
-    coupleImage: preweddingImg("FOOD8869.JPG"),
+    coupleImage: preweddingImg("FOOD1166.JPG"),
     ceremony: {
       title: "Tiệc Cưới Nhà Gái",
       date: "05 Tháng 7, 2026",

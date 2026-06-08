@@ -213,7 +213,7 @@ export default function EventsSection() {
                       alt={selectedEvent === "ceremony" ? WEDDING_CONFIG.bride.name : WEDDING_CONFIG.groom.name}
                       width={56}
                       height={56}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <h3 className="font-script text-2xl text-[var(--color-text-primary)] mb-6">
