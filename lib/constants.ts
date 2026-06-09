@@ -216,13 +216,18 @@ export const WEDDING_CONFIG = {
   ],
 };
 
-// Gallery Images — auto-generated from PREWEDDING_CONFIG.album
-// To change which photos appear, edit the album array in PREWEDDING_CONFIG above
-export const GALLERY_IMAGES = PREWEDDING_CONFIG.album.map((filename, index) => ({
-  src: preweddingImg(filename),
-  alt: `Ảnh cưới ${index + 1}`,
-  width: 1200,
-  height: 800,
-}));
+// Gallery Images — curated selection of 10 images for "Khoảnh Khắc" section
+export const GALLERY_IMAGES = [
+  { src: preweddingImg("FOOD9467.webp"), alt: "Ảnh cưới 1", width: 1200, height: 800 },
+  { src: preweddingImg("FOOD0357.webp"), alt: "Ảnh cưới 2", width: 1200, height: 1800 },
+  { src: preweddingImg("FOOD1315.webp"), alt: "Ảnh cưới 3", width: 1200, height: 1800 },
+  { src: preweddingImg("FOOD8487.webp"), alt: "Ảnh cưới 4", width: 1200, height: 1800 },
+  { src: preweddingImg("FOOD9557.webp"), alt: "Ảnh cưới 5", width: 1200, height: 800 },
+  { src: preweddingImg("FOOD2277.webp"), alt: "Ảnh cưới 6", width: 1200, height: 1800 },
+  { src: preweddingImg("FOOD0554.webp"), alt: "Ảnh cưới 7", width: 1200, height: 1800 },
+  { src: preweddingImg("FOOD8869.webp"), alt: "Ảnh cưới 8", width: 1200, height: 1800 },
+  { src: preweddingImg("FOOD1166.webp"), alt: "Ảnh cưới 9", width: 1200, height: 1800 },
+  { src: preweddingImg("FOOD9342.webp"), alt: "Ảnh cưới 10", width: 1200, height: 1800 },
+];
 
 export type WeddingConfig = typeof WEDDING_CONFIG;

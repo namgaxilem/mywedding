@@ -45,8 +45,8 @@ export default function GallerySection() {
           <div className="w-24 h-0.5 bg-[var(--color-primary-light)] mx-auto mt-6" />
         </motion.div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+        {/* Gallery Masonry Collage */}
+        <div className="columns-2 md:columns-3 gap-3 md:gap-4 space-y-3 md:space-y-4">
           {GALLERY_IMAGES.map((image, index) => (
             <motion.div
               key={index}
@@ -54,21 +54,20 @@ export default function GallerySection() {
               whileInView="visible"
               viewport={{ once: true, margin: "-30px" }}
               variants={ANIMATION_VARIANTS.scaleIn}
-              transition={{ duration: 0.4, delay: (index % 8) * 0.05 }}
-              whileHover={{ scale: 1.03, y: -4 }}
+              transition={{ duration: 0.4, delay: (index % 6) * 0.08 }}
+              whileHover={{ scale: 1.02 }}
               onClick={() => openLightbox(index)}
-              className="relative overflow-hidden rounded-xl shadow-md cursor-pointer"
+              className="relative overflow-hidden rounded-xl shadow-md cursor-pointer break-inside-avoid"
             >
-              <div className="relative aspect-square bg-[var(--color-bg-tertiary)]">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-110"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                sizes="(max-width: 768px) 50vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
             </motion.div>
           ))}
         </div>
