@@ -109,36 +109,14 @@ export const WEDDING_CONFIG = {
 
   // Our Story Section
   story: {
-    title: "Câu Chuyện Của Chúng Tôi",
+    title: "Chuyện Chúng Mình",
     subtitle: "Hành trình tình yêu",
-    items: [
-      {
-        id: 1,
-        title: "Lần Đầu Gặp Gỡ",
-        date: "Tháng 3, 2020",
-        description:
-          "Chúng tôi gặp nhau lần đầu tại một buổi họp mặt bạn bè. Ánh mắt đầu tiên đã khiến cả hai không thể quên được nhau.",
-        image: preweddingImg(PREWEDDING_CONFIG.storyImages.firstMeet),
-        position: "left" as const,
-      },
-      {
-        id: 2,
-        title: "Hẹn Hò Đầu Tiên",
-        date: "Tháng 4, 2020",
-        description:
-          "Buổi hẹn hò đầu tiên tại quán cà phê nhỏ, nơi chúng tôi trò chuyện suốt nhiều giờ và nhận ra có rất nhiều điểm chung.",
-        image: preweddingImg(PREWEDDING_CONFIG.storyImages.firstDate),
-        position: "right" as const,
-      },
-      {
-        id: 3,
-        title: "Lời Cầu Hôn",
-        date: "Tháng 12, 2025",
-        description:
-          "Dưới ánh hoàng hôn tuyệt đẹp, anh đã quỳ gối và cầu hôn em với chiếc nhẫn kim cương lấp lánh. Và em đã nói 'Có'!",
-        image: preweddingImg(PREWEDDING_CONFIG.storyImages.proposal),
-        position: "left" as const,
-      },
+    narrative:
+      "Chúng mình quen nhau khi cùng làm việc ở công ty. Nam là cấp trên, Hiền là cấp dưới. Thường xuyên phải tương tác với nhau, nên cứ thế phát sinh tình cảm khi nào chả hay. Các cụ hay bảo nên tránh các trường hợp con thấy, vợ bạn, gái cơ quan để yêu đương. Ấy thế mà chả hiểu sao, dây tơ hồng siết chặt quá nên là 2 đứa cứ thế va vào nhau. Yêu nhau nhùng nhằng thế mà giờ cũng hơn 3 năm, trải qua nhiều cảm xúc cùng nhau, vui có buồn có, nhưng tốt cái là chưa có chia tay. Mỗi đứa giờ 1 công việc, 1 định hướng khác nhau, nhưng có cái yêu nhau thì vẫn còn cùng nhau. Thế là 1 ngày đẹp trời, Nam mua cái nhẫn, dẫn nàng đến quán bò bít tết khứa khứa uống rượu vang, rồi á là quỳ xuống hỏi mình cưới nhau nha, Hiền lia lịa gật đầu. Thế là giờ chúng mình có đám cưới, thế là chúng mình về chung 1 nhà đó mí bạn :)) Chuyện tình yêu chúng mình đơn giản thế thôi đó. Cảm ơn bạn đã đọc đến tận đây nhé !! Cảm ơn bạn vì đã dành tình cảm cho Vợ Chồng mình !!! Yêu bạn ❤️",
+    collageImages: [
+      preweddingImg(PREWEDDING_CONFIG.storyImages.firstMeet),
+      preweddingImg(PREWEDDING_CONFIG.storyImages.firstDate),
+      preweddingImg(PREWEDDING_CONFIG.storyImages.proposal),
     ],
   },
 
