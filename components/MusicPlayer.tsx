@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Music } from "lucide-react";
 
-const SONG_NAME = "Wedding Song - Nam & Hiền";
+const SONG_NAME = "Ed Sheeran - Perfect";
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -14,7 +14,7 @@ export default function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const audio = new Audio("/music/wedding-song.mp3");
+    const audio = new Audio("/music/Ed Sheeran - Perfect.mp3");
     audio.loop = true;
     audio.volume = 0.5;
     audioRef.current = audio;
