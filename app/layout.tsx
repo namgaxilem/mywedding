@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: "vi_VN",
     images: [
       {
-        url: "/images/hero-couple.jpg",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: `Ảnh cưới ${WEDDING_CONFIG.groom.shortName} & ${WEDDING_CONFIG.bride.shortName}`,

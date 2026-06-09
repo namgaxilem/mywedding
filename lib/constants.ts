@@ -140,7 +140,7 @@ export const WEDDING_CONFIG = {
     brideFamily: {
       title: "NHÀ GÁI",
       fatherName: "Ông Đặng Ánh",
-      motherName: "Bà Nguyễn Thị Hoa",
+      motherName: "Bà Huỳnh Thị Hoa",
       address: "Thành phố Đà Lạt, Lâm Đồng",
       mapUrl: "https://maps.google.com/?q=Vuon+hoa+Cam+Tu+Cau+Da+Lat",
     },
