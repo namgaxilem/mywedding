@@ -1,14 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import Image from "next/image";
 import { WEDDING_CONFIG } from "@/lib/constants";
 import { ANIMATION_VARIANTS } from "@/lib/theme";
 
 export default function Footer() {
   return (
-    <footer className="py-12 bg-[var(--color-primary)] text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-[var(--color-primary)] text-white overflow-hidden">
+      {/* Background prewedding image */}
+      <div className="absolute inset-0">
+        <Image
+          src={WEDDING_CONFIG.footer.image}
+          alt="Prewedding"
+          fill
+          className="object-cover opacity-20"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[var(--color-primary)]/80" />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -18,31 +30,18 @@ export default function Footer() {
           className="text-center"
         >
           {/* Couple Names */}
-          <h2 className="font-script text-3xl md:text-4xl mb-4">
+          <h2 className="font-script text-3xl md:text-5xl mb-4">
             {WEDDING_CONFIG.groom.shortName} & {WEDDING_CONFIG.bride.shortName}
           </h2>
 
           {/* Message */}
-          <p className="text-white/80 mb-6">{WEDDING_CONFIG.footer.message}</p>
-
-          {/* Hashtag */}
-          <p className="text-lg font-medium mb-8">
-            {WEDDING_CONFIG.footer.hashtag}
+          <p className="text-white/80 mb-6 text-sm md:text-base">
+            {WEDDING_CONFIG.footer.message}
           </p>
 
-          {/* Divider */}
-          <div className="w-24 h-0.5 bg-white/30 mx-auto mb-8" />
-
-          {/* Copyright */}
-          <div className="flex items-center justify-center gap-2 text-white/70 text-sm">
-            <span>Made with</span>
-            <Heart className="w-4 h-4 fill-current text-amber-200" />
-            <span>for our special day</span>
-          </div>
-
-          <p className="text-white/50 text-xs mt-4">
-            © {new Date().getFullYear()} {WEDDING_CONFIG.groom.shortName} &{" "}
-            {WEDDING_CONFIG.bride.shortName}. All rights reserved.
+          {/* Hashtag */}
+          <p className="text-lg md:text-xl font-medium">
+            {WEDDING_CONFIG.footer.hashtag}
           </p>
         </motion.div>
       </div>
