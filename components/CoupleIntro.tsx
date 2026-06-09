@@ -11,14 +11,14 @@ export default function CoupleIntro() {
   return (
     <section className="py-16 md:py-24 bg-[var(--color-bg-primary)]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Groom - image left, text right */}
+        {/* Groom - text left, image right */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={ANIMATION_VARIANTS.fadeInUp}
           transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-16 md:mb-24"
+          className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12 mb-16 md:mb-24"
         >
           {/* Groom Image */}
           <div className="w-full md:w-2/5 flex-shrink-0">
@@ -34,7 +34,7 @@ export default function CoupleIntro() {
           </div>
 
           {/* Groom Info */}
-          <div className="w-full md:w-3/5 text-center md:text-left">
+          <div className="w-full md:w-3/5 text-center md:text-right">
             <p className="text-sm text-[var(--color-text-muted)] tracking-widest uppercase italic mb-2">
               {groom.role}
             </p>
@@ -54,14 +54,14 @@ export default function CoupleIntro() {
           <div className="h-px w-16 bg-[var(--color-border)]" />
         </div>
 
-        {/* Bride - text left, image right */}
+        {/* Bride - image left, text right */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={ANIMATION_VARIANTS.fadeInUp}
           transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12"
+          className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
         >
           {/* Bride Image */}
           <div className="w-full md:w-2/5 flex-shrink-0">
@@ -77,7 +77,7 @@ export default function CoupleIntro() {
           </div>
 
           {/* Bride Info */}
-          <div className="w-full md:w-3/5 text-center md:text-right">
+          <div className="w-full md:w-3/5 text-center md:text-left">
             <p className="text-sm text-[var(--color-text-muted)] tracking-widest uppercase italic mb-2">
               {bride.role}
             </p>
