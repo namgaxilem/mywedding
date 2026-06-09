@@ -70,8 +70,20 @@ export default function EventsSection() {
   const selectedAddress = selectedEvent === "ceremony" ? ceremony.address : reception.address;
 
   return (
-    <section id="events" className="pt-20 pb-6 md:pt-32 md:pb-10 bg-[var(--color-bg-primary)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="events" className="relative pt-20 pb-6 md:pt-32 md:pb-10 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src={WEDDING_CONFIG.events.backgroundImage}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[var(--color-bg-primary)]/80" />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial="hidden"

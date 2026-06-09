@@ -7,69 +7,69 @@ export const PREWEDDING_CONFIG = {
   basePath: "/images/prewedding",
 
   // Hình bìa (cover / hero)
-  coverImage: "FOOD9467.jpg",
+  coverImage: "FOOD9467.webp",
 
   // Hình cổng
-  gateImage: "FOOD9557.jpg",
+  gateImage: "FOOD9557.webp",
 
   // Để bàn (table display)
   tableImages: [
-    "FOOD8487.jpg",
-    "FOOD1315.jpg",
-    "FOOD3067.jpg",
-    "FOOD0554.jpg",
-    "FOOD9342.jpg",
+    "FOOD8487.webp",
+    "FOOD1315.webp",
+    "FOOD3067.webp",
+    "FOOD0554.webp",
+    "FOOD9342.webp",
   ],
 
   // 3 images used in the Story (Câu Chuyện) timeline — change freely
   storyImages: {
-    firstMeet: "FOOD9557.jpg",
-    firstDate: "FOOD8487.jpg",
-    proposal: "FOOD1315.jpg",
+    firstMeet: "FOOD9557.webp",
+    firstDate: "FOOD8487.webp",
+    proposal: "FOOD1315.webp",
   },
 
   // Full album of 40 prewedding photos
   album: [
-    "FOOD0241.jpg",
-    "FOOD0357.jpg",
-    "FOOD0491.jpg",
-    "FOOD0554.jpg",
-    "FOOD0666.jpg",
-    "FOOD1089.jpg",
-    "FOOD1166.jpg",
-    "FOOD1197.jpg",
-    "FOOD1315.jpg",
-    "FOOD1753.jpg",
-    "FOOD1765.jpg",
-    "FOOD1863.jpg",
-    "FOOD1892.jpg",
-    "FOOD1949.jpg",
-    "FOOD2019.jpg",
-    "FOOD2078.jpg",
-    "FOOD2128.jpg",
-    "FOOD2188.jpg",
-    "FOOD2277.jpg",
-    "FOOD2317.jpg",
-    "FOOD2399.jpg",
-    "FOOD2934.jpg",
-    "FOOD2981.jpg",
-    "FOOD3067.jpg",
-    "FOOD3118.jpg",
-    "FOOD3179.jpg",
-    "FOOD8487.jpg",
-    "FOOD8618.jpg",
-    "FOOD8869.jpg",
-    "FOOD8949.jpg",
-    "FOOD9076.jpg",
-    "FOOD9342.jpg",
-    "FOOD9354.jpg",
-    "FOOD9467.jpg",
-    "FOOD9498.jpg",
-    "FOOD9531.jpg",
-    "FOOD9542.jpg",
-    "FOOD9557.jpg",
-    "FOOD9589.jpg",
-    "FOOD9793.jpg",
+    "FOOD0241.webp",
+    "FOOD0357.webp",
+    "FOOD0491.webp",
+    "FOOD0554.webp",
+    "FOOD0666.webp",
+    "FOOD1089.webp",
+    "FOOD1166.webp",
+    "FOOD1197.webp",
+    "FOOD1315.webp",
+    "FOOD1753.webp",
+    "FOOD1765.webp",
+    "FOOD1863.webp",
+    "FOOD1892.webp",
+    "FOOD1949.webp",
+    "FOOD2019.webp",
+    "FOOD2078.webp",
+    "FOOD2128.webp",
+    "FOOD2188.webp",
+    "FOOD2277.webp",
+    "FOOD2317.webp",
+    "FOOD2399.webp",
+    "FOOD2934.webp",
+    "FOOD2981.webp",
+    "FOOD3067.webp",
+    "FOOD3118.webp",
+    "FOOD3179.webp",
+    "FOOD8487.webp",
+    "FOOD8618.webp",
+    "FOOD8869.webp",
+    "FOOD8949.webp",
+    "FOOD9076.webp",
+    "FOOD9342.webp",
+    "FOOD9354.webp",
+    "FOOD9467.webp",
+    "FOOD9498.webp",
+    "FOOD9531.webp",
+    "FOOD9542.webp",
+    "FOOD9557.webp",
+    "FOOD9589.webp",
+    "FOOD9793.webp",
   ],
 };
 
@@ -83,7 +83,7 @@ export const WEDDING_CONFIG = {
     name: "Nguyễn Đức Nam",
     shortName: "Nam",
     role: "Chú Rể",
-    image: "/images/prewedding/FOOD9793.jpg",
+    image: "/images/prewedding/FOOD9793.webp",
     description:
       "Một chàng trai yêu đời, luôn tìm thấy niềm vui trong những điều giản dị. Với quan điểm sống tích cực và luôn hết lòng vì gia đình, Nam tin rằng hạnh phúc đến từ sự chân thành và yêu thương.",
   },
@@ -91,7 +91,7 @@ export const WEDDING_CONFIG = {
     name: "Đặng Thị Mỹ Hiền",
     shortName: "Hiền",
     role: "Cô Dâu",
-    image: "/images/prewedding/FOOD8487.jpg",
+    image: "/images/prewedding/FOOD8487.webp",
     description:
       "Một cô gái dịu dàng, tinh tế và đầy nhiệt huyết. Hiền luôn mang đến năng lượng tích cực cho những người xung quanh. Với trái tim ấm áp và tâm hồn lãng mạn, Hiền tin vào tình yêu đích thực.",
   },
@@ -150,7 +150,8 @@ export const WEDDING_CONFIG = {
   events: {
     title: "Ngày Trọng Đại",
     subtitle: "Chúng tôi rất hân hạnh được đón tiếp quý khách",
-    coupleImage: preweddingImg("FOOD1166.jpg"),
+    backgroundImage: preweddingImg("FOOD2277.webp"),
+    coupleImage: preweddingImg("FOOD1166.webp"),
     ceremony: {
       title: "Tiệc Cưới Nhà Gái",
       date: "05 Tháng 7, 2026",
@@ -167,6 +168,11 @@ export const WEDDING_CONFIG = {
       address: "Trường Sơn, Phường 2, Tân Bình, TP.HCM, Vietnam",
       mapUrl: "https://maps.google.com/?q=Pavillon+Tan+Son+Nhat+Wedding+Hall",
     },
+  },
+
+  // Guest Wishes Section
+  guestWishes: {
+    backgroundImage: preweddingImg("FOOD0666.webp"),
   },
 
   // Well Wishes / Gift Section
@@ -198,7 +204,7 @@ export const WEDDING_CONFIG = {
   footer: {
     message: "Cảm ơn bạn đã ghé thăm!",
     hashtag: "#NamHien2026",
-    image: preweddingImg("FOOD9531.jpg"),
+    image: preweddingImg("FOOD9531.webp"),
   },
 
   // Navigation

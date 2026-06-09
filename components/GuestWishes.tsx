@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Send, Heart, Loader2, MessageCircle } from "lucide-react";
 import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { WEDDING_CONFIG } from "@/lib/constants";
 import { ANIMATION_VARIANTS } from "@/lib/theme";
 
 interface Wish {
@@ -85,8 +87,20 @@ export default function GuestWishes() {
   };
 
   return (
-    <section id="guest-wishes" className="py-20 md:py-32 bg-gradient-to-b from-[var(--color-bg-secondary)] to-[var(--color-bg-primary)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="guest-wishes" className="relative py-20 md:py-32 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src={WEDDING_CONFIG.guestWishes.backgroundImage}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg-secondary)]/80 to-[var(--color-bg-primary)]/80" />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial="hidden"
