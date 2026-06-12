@@ -5,12 +5,14 @@ import { motion } from "framer-motion";
 import { Music } from "lucide-react";
 
 const SONG_NAME = "Ed Sheeran - Perfect";
+const STORAGE_KEY = "wedding_music_playing";
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -28,11 +30,20 @@ export default function MusicPlayer() {
     };
 
     const handleCanPlay = () => {
-      audio.play().then(() => {
-        setIsPlaying(true);
-      }).catch(() => {
-        console.log("Auto-play blocked, user interaction required");
-      });
+      // Check localStorage for user's previous preference
+      const storedPreference = localStorage.getItem(STORAGE_KEY);
+      
+      // First time visitor (no stored preference) -> auto play
+      // Returning visitor -> respect their last choice
+      const shouldPlay = storedPreference === null ? true : storedPreference === "true";
+      
+      if (shouldPlay) {
+        audio.play().then(() => {
+          setIsPlaying(true);
+        }).catch(() => {
+          console.log("Auto-play blocked, user interaction required");
+        });
+      }
     };
 
     audio.addEventListener("loadedmetadata", handleLoadedMetadata);
@@ -49,6 +60,8 @@ export default function MusicPlayer() {
 
   const togglePlay = () => {
     if (audioRef.current) {
+      const newPlayingState = !isPlaying;
+      
       if (isPlaying) {
         audioRef.current.pause();
       } else {
@@ -56,7 +69,12 @@ export default function MusicPlayer() {
           console.log("Playback requires user interaction");
         });
       }
-      setIsPlaying(!isPlaying);
+      
+      setIsPlaying(newPlayingState);
+      setHasUserInteracted(true);
+      
+      // Store user's preference in localStorage
+      localStorage.setItem(STORAGE_KEY, String(newPlayingState));
     }
   };
 

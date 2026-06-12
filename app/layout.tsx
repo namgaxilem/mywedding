@@ -4,7 +4,7 @@ import { WEDDING_CONFIG } from "@/lib/constants";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ducnammyhien.vercel.app"),
-  title: `${WEDDING_CONFIG.groom.shortName} & ${WEDDING_CONFIG.bride.shortName} - Wedding`,
+  title: "Đức Nam 💝 Mỹ Hiền",
   description: `Trân trọng kính mời bạn đến dự lễ cưới của ${WEDDING_CONFIG.groom.shortName} & ${WEDDING_CONFIG.bride.shortName} vào ngày ${WEDDING_CONFIG.weddingDateDisplay}. Hãy cùng chúng tôi chia sẻ niềm hạnh phúc trong ngày trọng đại này! 💒💍`,
   keywords: ["wedding", "đám cưới", WEDDING_CONFIG.groom.shortName, WEDDING_CONFIG.bride.shortName],
   openGraph: {

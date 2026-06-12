@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { WEDDING_CONFIG } from "@/lib/constants";
+import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +23,10 @@ export default function Header() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleInvitationClick = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -58,6 +63,14 @@ export default function Header() {
                 {item.label}
               </button>
             ))}
+            <Link
+              href="/invitation"
+              className={`text-sm font-medium transition-colors hover:text-[var(--color-primary)] cursor-pointer ${
+                isScrolled ? "text-[var(--color-text-primary)]" : "text-white"
+              }`}
+            >
+              Thiệp Mời
+            </Link>
           </nav>
 
           {/* RSVP Button */}
@@ -98,6 +111,13 @@ export default function Header() {
                 {item.label}
               </button>
             ))}
+            <Link
+              href="/invitation"
+              onClick={handleInvitationClick}
+              className="px-6 py-3 text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)] hover:text-[var(--color-primary)] text-left"
+            >
+              Thiệp Mời
+            </Link>
             <div className="px-6 py-3">
               <button 
                 onClick={() => scrollToSection('rsvp')}
