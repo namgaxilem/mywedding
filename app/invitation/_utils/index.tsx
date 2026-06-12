@@ -13,7 +13,7 @@ export const INVITATIONS: Invitation[] = [
   { id: "thuy-tien", name: "Thủy Tiên", pronoun: "Bạn", place: ["groom"] },
   { id: "bon-nguyen", name: "Bon Nguyễn", pronoun: "Bạn", place: ["groom"] },
   { id: "tuong-vy-trung-thanh", name: "Tường Vy - Trung Thành", pronoun: "2 Vợ Chồng Bạn", place: ["groom"] },
-  { id: "hoai-duc-vo", name: "Hoài Đức - Ly Anh", pronoun: "2 Vợ chồng Bạn", place: ["groom"] },
+  { id: "hoai-duc-ly-anh", name: "Hoài Đức - Ly Anh", pronoun: "2 Vợ chồng Bạn", place: ["groom"] },
   { id: "minh-ben", name: "Minh Ben", pronoun: "Bạn", place: ["groom"] },
   { id: "minh-thuy", name: "Minh Thúy", pronoun: "Bạn", place: ["groom"] },
   { id: "phuc-an", name: "Phúc Ân", pronoun: "Bạn", place: ["groom"] },
