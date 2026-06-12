@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     url: "https://ducnammyhien.vercel.app",
     siteName: `${WEDDING_CONFIG.groom.shortName} & ${WEDDING_CONFIG.bride.shortName} Wedding`,
     locale: "vi_VN",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `Ảnh cưới ${WEDDING_CONFIG.groom.shortName} & ${WEDDING_CONFIG.bride.shortName}`,
+      },
+    ],
   },
 };
 
