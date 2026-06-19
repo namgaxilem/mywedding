@@ -88,6 +88,14 @@ export default function InvitationDetailPage({ params }: InvitationPageProps) {
 
   const { ceremonyLabel, possessive } = getInviteLine(invitation);
 
+  // Timeline theo nhà: chỉ nhà gái -> bride, còn lại -> groom
+  const timelineSide = invitation.place.includes("bride") && !invitation.place.includes("groom") ? "bride" : "groom";
+  const timelineItems = WEDDING_CONFIG.events.timeline[timelineSide];
+  const timelineIcons = [Users, Camera, Utensils, PartyPopper];
+
+  // Hôn lễ tại tư gia (Lễ Thành Hôn nhà trai / Lễ Vu Quy nhà gái)
+  const honLe = WEDDING_CONFIG.events.homeCeremony;
+
 
   return (
     <div className="min-h-screen bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${preweddingImg(PREWEDDING_CONFIG.coverImage)})` }}>
@@ -456,7 +464,65 @@ export default function InvitationDetailPage({ params }: InvitationPageProps) {
                   </motion.div>
                 </section>
 
-                {/* Event Details Section - Traditional Style */}
+                {/* Hôn Lễ Section - Lễ Thành Hôn / Lễ Vu Quy tại tư gia (tấm thiệp lễ) */}
+                <section className="text-center mb-8">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.3 }}
+                  >
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                      <div className="w-12 h-[1px] bg-[var(--color-primary)]/40" />
+                      <h2 className="text-lg md:text-xl text-[var(--color-primary)] tracking-widest uppercase">
+                        Nghi Thức Hôn Lễ
+                      </h2>
+                      <div className="w-12 h-[1px] bg-[var(--color-primary)]/40" />
+                    </div>
+
+                    <div className="space-y-8">
+                      {[
+                        showCeremony ? honLe.bride : null,
+                        showReception ? honLe.groom : null,
+                      ]
+                        .filter((le): le is typeof honLe.bride => le !== null)
+                        .map((le, index) => (
+                          <div key={index} className="border border-[var(--color-border-light)] rounded-lg p-6 bg-[var(--color-bg-primary)]">
+                            <div className="flex items-center justify-center gap-2 mb-3">
+                              <Heart className="w-5 h-5 text-[var(--color-primary)]" />
+                              <h3 className="text-base md:text-lg font-semibold text-[var(--color-primary)] uppercase tracking-wide">
+                                {le.label}
+                              </h3>
+                            </div>
+
+                            <p className="font-['Great_Vibes'] text-3xl md:text-4xl text-[var(--color-primary)] mb-1">
+                              {le.date}
+                            </p>
+                            <p className="text-xs text-[var(--color-text-muted)] mb-2">{le.lunarDate}</p>
+
+                            <div className="flex items-center justify-center gap-2 text-[var(--color-text-secondary)] mb-3">
+                              <Clock className="w-4 h-4" />
+                              <span className="text-base">Vào lúc: {le.time}</span>
+                            </div>
+
+                            <p className="text-sm md:text-base text-[var(--color-text-primary)] mb-1">{le.venue}</p>
+                            <p className="text-xs md:text-sm text-[var(--color-text-muted)] mb-4">{le.address}</p>
+
+                            <a
+                              href={le.mapUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-4 py-2 text-sm text-[var(--color-primary)] border border-[var(--color-primary)] rounded-full hover:bg-[var(--color-primary)] hover:text-white transition-colors"
+                            >
+                              <MapPin className="w-4 h-4" />
+                              Mở Google Maps
+                            </a>
+                          </div>
+                        ))}
+                    </div>
+                  </motion.div>
+                </section>
+
+                {/* Event Details Section - Traditional Style (tấm thiệp tiệc nhà hàng) */}
                 <section className="text-center mb-8">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -502,7 +568,7 @@ export default function InvitationDetailPage({ params }: InvitationPageProps) {
                           {/* Embedded Map */}
                           <div className="rounded-lg overflow-hidden border border-[var(--color-border-light)] mb-3">
                             <iframe
-                              src={`https://maps.google.com/maps?q=${encodeURIComponent(WEDDING_CONFIG.events.ceremony.address)}&t=m&z=15&output=embed`}
+                              src={`https://maps.google.com/maps?q=${encodeURIComponent(`${WEDDING_CONFIG.events.ceremony.venue}, ${WEDDING_CONFIG.events.ceremony.address}`)}&t=m&z=15&output=embed`}
                               className="w-full h-48 border-0"
                               allowFullScreen
                               loading="lazy"
@@ -551,7 +617,7 @@ export default function InvitationDetailPage({ params }: InvitationPageProps) {
                           {/* Embedded Map */}
                           <div className="rounded-lg overflow-hidden border border-[var(--color-border-light)] mb-3">
                             <iframe
-                              src={`https://maps.google.com/maps?q=${encodeURIComponent(WEDDING_CONFIG.events.reception.address)}&t=m&z=15&output=embed`}
+                              src={`https://maps.google.com/maps?q=${encodeURIComponent(`${WEDDING_CONFIG.events.reception.venue}, ${WEDDING_CONFIG.events.reception.address}`)}&t=m&z=15&output=embed`}
                               className="w-full h-48 border-0"
                               allowFullScreen
                               loading="lazy"
@@ -580,20 +646,18 @@ export default function InvitationDetailPage({ params }: InvitationPageProps) {
                   <p className="text-sm text-[var(--color-text-muted)] mb-4">{timelineLabel}</p>
 
                   <div className="grid grid-cols-4 gap-3">
-                    {[
-                      { time: "17:30", title: "Đón Khách", icon: Users },
-                      { time: "18:00", title: "Chụp Ảnh", icon: Camera },
-                      { time: "18:30", title: "Khai Tiệc", icon: Utensils },
-                      { time: "21:30", title: "Tiễn Khách", icon: PartyPopper },
-                    ].map((item, index) => (
+                    {timelineItems.map((item, index) => {
+                      const Icon = timelineIcons[index];
+                      return (
                       <div key={index} className="text-center">
                         <div className="w-12 h-12 rounded-full bg-[var(--color-primary-lighter)] flex items-center justify-center mx-auto mb-2">
-                          <item.icon className="w-5 h-5 text-[var(--color-primary)]" />
+                          <Icon className="w-5 h-5 text-[var(--color-primary)]" />
                         </div>
                         <p className="text-lg md:text-xl font-['Playfair_Display'] text-[var(--color-primary)] mb-0.5">{item.time}</p>
                         <p className="text-xs md:text-sm text-[var(--color-text-secondary)]">{item.title}</p>
                       </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </section>
 

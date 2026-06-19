@@ -155,18 +155,54 @@ export const WEDDING_CONFIG = {
     ceremony: {
       title: "Tiệc Cưới Nhà Gái",
       date: "05 Tháng 7, 2026",
-      time: "10:00 - 12:00",
-      venue: "Tại Nhà Gái",
-      address: "25/10 Phan Chu Trinh, Phường Lâm Viên, Đà Lạt, Lâm Đồng 670000, Vietnam",
-      mapUrl: "https://maps.google.com/?q=25%2F10+Phan+Chu+Trinh%2C+L%C3%A2m+Vi%C3%AAn%2C+%C4%90%C3%A0+L%E1%BA%A1t%2C+L%C3%A2m+%C4%90%E1%BB%93ng",
+      time: "11:00 - 14:00", // đón khách 11h, nhập tiệc 12h
+      venue: "Nhà hàng Song Hỷ (Mỹ Đình cũ)",
+      address: "Đa Lộc, Phường Xuân Trường, Đà Lạt, Lâm Đồng",
+      mapUrl: "https://maps.app.goo.gl/AhMKV7m7an8hovA8A",
     },
     reception: {
       title: "Tiệc Cưới Nhà Trai",
       date: "12 Tháng 7, 2026",
       time: "18:00 - 22:00",
-      venue: "Trung Tâm Hội Nghị & Tiệc Cưới Pavillon Tân Sơn Nhất",
-      address: "Trường Sơn, Phường 2, Tân Bình, TP.HCM, Vietnam",
+      venue: "Sảnh Amber (Tầng 4) - Trung Tâm Hội Nghị & Tiệc Cưới Pavillon Tân Sơn Nhất",
+      address: "202 Đ. Hoàng Văn Thụ, Đức Nhuận, Hồ Chí Minh",
       mapUrl: "https://maps.google.com/?q=Pavillon+Tan+Son+Nhat+Wedding+Hall",
+    },
+    // Hôn lễ tại tư gia: Lễ Thành Hôn (nhà trai) / Lễ Vu Quy (nhà gái)
+    homeCeremony: {
+      groom: {
+        label: "Lễ Thành Hôn",
+        date: "12 Tháng 7, 2026",
+        lunarDate: "Nhằm ngày 28 tháng 5 năm Bính Ngọ (Âm lịch)",
+        time: "10:00 - 11:00",
+        venue: "Tư Gia Nhà Trai",
+        address: "1/49 Đặng Thùy Trâm, Phường Bình Lợi Trung, TP.HCM",
+        mapUrl: "https://maps.google.com/?q=1%2F49+Dang+Thuy+Tram+Binh+Loi+Trung+Thu+Duc",
+      },
+      bride: {
+        label: "Lễ Vu Quy",
+        date: "05 Tháng 7, 2026",
+        lunarDate: "Nhằm ngày 21 tháng 5 năm Bính Ngọ (Âm lịch)",
+        time: "07:00 - 09:00",
+        venue: "Tư Gia Nhà Gái",
+        address: "Tổ 1, TDP Lộc Quý, Phường Xuân Trường, Đà Lạt, Lâm Đồng",
+        mapUrl: "https://maps.google.com/?q=To+1+Loc+Quy+Xuan+Truong+Da+Lat+Lam+Dong",
+      },
+    },
+    // Timeline tiệc theo từng nhà (đón khách -> tiễn khách)
+    timeline: {
+      groom: [
+        { time: "18:00", title: "Đón Khách" },
+        { time: "18:30", title: "Chụp Ảnh" },
+        { time: "19:00", title: "Khai Tiệc" },
+        { time: "21:30", title: "Tiễn Khách" },
+      ],
+      bride: [
+        { time: "11:00", title: "Đón Khách" },
+        { time: "11:30", title: "Chụp Ảnh" },
+        { time: "12:00", title: "Khai Tiệc" },
+        { time: "14:00", title: "Tiễn Khách" },
+      ],
     },
   },
 
