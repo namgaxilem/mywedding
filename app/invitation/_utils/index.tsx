@@ -20,18 +20,57 @@ export interface Invitation {
 }
 
 export const INVITATIONS: Invitation[] = [
-  { id: "nghia-phuong", name: "Hiếu Nghĩa - Thúy Phượng", pronoun: "2 Vợ Chồng Bạn", place: ["groom"] },
+  {
+    id: "nghia-phuong",
+    name: "Hiếu Nghĩa - Thúy Phượng",
+    pronoun: "2 Vợ Chồng Bạn",
+    place: ["groom"],
+  },
   { id: "thuy-tien", name: "Thủy Tiên", pronoun: "Bạn", place: ["groom"] },
   { id: "bon-nguyen", name: "Bon Nguyễn", pronoun: "Bạn", place: ["groom"] },
-  { id: "tuong-vy-trung-thanh", name: "Tường Vy - Trung Thành", pronoun: "2 Vợ Chồng Bạn", place: ["groom"] },
-  { id: "hoai-duc-ly-anh", name: "Hoài Đức - Ly Anh", pronoun: "2 Vợ chồng Bạn", place: ["groom"] },
+  {
+    id: "tuong-vy-trung-thanh",
+    name: "Tường Vy - Trung Thành",
+    pronoun: "2 Vợ Chồng Bạn",
+    place: ["groom"],
+  },
+  {
+    id: "hoai-duc-ly-anh",
+    name: "Hoài Đức - Ly Anh",
+    pronoun: "2 Vợ chồng Bạn",
+    place: ["groom"],
+  },
   { id: "minh-ben", name: "Minh Ben", pronoun: "Bạn", place: ["groom"] },
   { id: "minh-thuy", name: "Minh Thúy", pronoun: "Bạn", place: ["groom"] },
   { id: "phuc-an", name: "Phúc Ân", pronoun: "Bạn", place: ["groom"] },
 
   { id: "thien-luan", name: "Thiên Luân", pronoun: "Bạn", place: ["groom"] },
   { id: "son-lam", name: "Sơn Lâm", pronoun: "Bạn", place: ["groom"] },
-  { id: "dao-huyen-thanh-phuong", name: "Đào Huyền Thanh Phương", pronoun: "Bạn", place: ["groom"] },
+  {
+    id: "dao-huyen-thanh-phuong",
+    name: "Đào Huyền Thanh Phương",
+    pronoun: "Bạn",
+    place: ["groom"],
+  },
+
+  { id: "hoang-phuc", name: "Phúc", pronoun: "Bạn", place: ["groom"] },
+  { id: "khanh-duy", name: "Duy", pronoun: "Bạn", place: ["groom"] },
+  { id: "thanh-phong", name: "Phong", pronoun: "Bạn", place: ["groom"] },
+  { id: "lu-minh-hoang", name: "Hoàng", pronoun: "Bạn", place: ["groom"] },
+  { id: "khoa-acoustic", name: "Khoa", pronoun: "Bạn", place: ["groom"] },
+
+  { id: "cong-minh", name: "Minh", pronoun: "Bạn", place: ["groom"] },
+  { id: "tu-huy", name: "Huy", pronoun: "Bạn", place: ["groom"] },
+  { id: "phuc-dat", name: "Đạt", pronoun: "Bạn", place: ["groom"] },
+
+  { id: "dang-phuong", name: "Đẳng - Phương", pronoun: "Gia đình bạn", place: ["groom"] },
+  { id: "trung-nam", name: "Nam - Nga", pronoun: "Gia đình bạn", place: ["groom"] },
+
+  { id: "thanh-tri", name: "Thành Trí", pronoun: "Bạn", place: ["groom"] },
+  { id: "bao", name: "Bảo", pronoun: "Bạn", place: ["groom"] },
+  { id: "hung", name: "Hưng", pronoun: "Bạn", place: ["groom"] },
+  { id: "van", name: "Văn", pronoun: "Bạn", place: ["groom"] },
+  { id: "e-duy-doto", name: "Duy", pronoun: "Em", place: ["groom"] },
 
   { id: "tuyen", name: "Tuyên", pronoun: "Bạn", place: ["groom"] },
   { id: "nhan", name: "Nhân", pronoun: "Em", place: ["groom"] },
@@ -43,21 +82,25 @@ export const INVITATIONS: Invitation[] = [
   { id: "thu", name: "Thư", pronoun: "Em", place: ["groom"] },
   { id: "anh-truong", name: "Trường", pronoun: "Anh", place: ["groom"] },
 
-  { id: "phong", name: "Phong", pronoun: "Bạn", place: ["groom"] },
-  { id: "hoang", name: "Hoàng", pronoun: "Bạn", place: ["groom"] },
-  { id: "thanh-tri", name: "Thành Trí", pronoun: "Bạn", place: ["groom"] },
-  { id: "bao", name: "Bảo", pronoun: "Bạn", place: ["groom"] },
-  { id: "hung", name: "Hưng", pronoun: "Bạn", place: ["groom"] },
-  { id: "van", name: "Văn", pronoun: "Bạn", place: ["groom"] },
-  { id: "e-duy-doto", name: "Duy", pronoun: "Em", place: ["groom"] },
-
   { id: "anh-tri", name: "Tri", pronoun: "Anh", place: ["groom"] },
   { id: "khai", name: "Khải", pronoun: "Bạn", place: ["groom"] },
   { id: "duy", name: "Duy", pronoun: "Bạn", place: ["groom"] },
 
   // Nha gai
-  { id: "anh-chi-nhuong-thao", name: "Nhường Thảo", pronoun: "Anh Chị", place: ["bride"], host: "family" },
-  { id: "gia-dinh-chau-binh-nguyen", name: "Cháu Bình Nguyên", pronoun: "Gia đình", place: ["bride"], host: "family" },
+  {
+    id: "anh-chi-nhuong-thao",
+    name: "Nhường Thảo",
+    pronoun: "Anh Chị",
+    place: ["bride"],
+    host: "family",
+  },
+  {
+    id: "gia-dinh-chau-binh-nguyen",
+    name: "Cháu Bình Nguyên",
+    pronoun: "Gia đình",
+    place: ["bride"],
+    host: "family",
+  },
 ];
 
 export function getInvitationById(id: string): Invitation | undefined {
@@ -83,7 +126,10 @@ export function getCeremonyType(inv: Invitation): CeremonyType {
 }
 
 // 2 phần để render: "ĐẾN DỰ {ceremonyLabel} {possessive}"
-export function getInviteLine(inv: Invitation): { ceremonyLabel: string; possessive: string } {
+export function getInviteLine(inv: Invitation): {
+  ceremonyLabel: string;
+  possessive: string;
+} {
   return {
     ceremonyLabel: CEREMONY_LABEL[getCeremonyType(inv)],
     possessive: HOST_POSSESSIVE[inv.host ?? "couple"],
