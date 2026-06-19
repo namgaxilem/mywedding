@@ -8,7 +8,7 @@ import { WEDDING_CONFIG, PREWEDDING_CONFIG, preweddingImg } from "@/lib/constant
 import { MapPin, Calendar, Clock, Heart, Users, Camera, Utensils, PartyPopper, X, Home, ArrowLeft } from "lucide-react";
 import MusicPlayer from "@/components/MusicPlayer";
 import FallingFlowers from "@/components/FallingFlowers";
-import { getInvitationById, INVITATIONS, type Invitation } from "../_utils";
+import { getInvitationById, getInviteLine, INVITATIONS, type Invitation } from "../_utils";
 
 interface InvitationPageProps {
   params: Promise<{
@@ -85,6 +85,8 @@ export default function InvitationDetailPage({ params }: InvitationPageProps) {
       : invitation.place.includes("groom")
         ? "Chương trình tiệc cưới nhà trai"
         : "Chương trình tiệc cưới nhà gái";
+
+  const { ceremonyLabel, possessive } = getInviteLine(invitation);
 
 
   return (
@@ -388,7 +390,7 @@ export default function InvitationDetailPage({ params }: InvitationPageProps) {
                       {invitation.pronoun} {invitation.additionalInfo || invitation.name}
                     </p>
                     <p className="text-base md:text-lg text-[var(--color-primary)] mt-4 tracking-wide">
-                      ĐẾN DỰ <span className="font-semibold">LỄ THÀNH HÔN</span> CỦA CHÚNG TÔI
+                      ĐẾN DỰ <span className="font-semibold">{ceremonyLabel}</span> {possessive}
                     </p>
                   </motion.div>
                 </section>

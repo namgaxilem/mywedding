@@ -7,27 +7,47 @@ interface LayoutProps {
   params: Promise<{ id: string }>;
 }
 
+const COUPLE = `${WEDDING_CONFIG.groom.shortName} & ${WEDDING_CONFIG.bride.shortName}`;
+
+// Ảnh OG dùng chung (1200x630). Đường dẫn tương đối -> resolve theo metadataBase ở root layout.
+const OG_IMAGE = {
+  url: "/images/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: `Ảnh cưới ${COUPLE}`,
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const invitation = getInvitationById(id);
 
   if (!invitation) {
-    return {
-      title: "Thiệp mời không tồn tại",
-    };
+    return { title: "Thiệp mời không tồn tại" };
   }
 
-  const title = `Thiệp Mời ${invitation.pronoun} ${invitation.name} | ${WEDDING_CONFIG.groom.shortName} & ${WEDDING_CONFIG.bride.shortName}`;
-  const description = `Kính mời ${invitation.pronoun} ${invitation.name} dự lễ cưới ${WEDDING_CONFIG.groom.shortName} & ${WEDDING_CONFIG.bride.shortName} - ${WEDDING_CONFIG.weddingDateDisplay}`;
+  const guest = `${invitation.pronoun} ${invitation.name}`;
+  const title = `Thiệp Mời ${guest} | ${COUPLE}`;
+  const description = `Trân trọng kính mời ${guest} đến dự lễ cưới của ${COUPLE} - ${WEDDING_CONFIG.weddingDateDisplay}`;
+  const url = `/invitation/${invitation.id}`;
 
   return {
     title,
     description,
+    alternates: { canonical: url },
     openGraph: {
       title,
       description,
       type: "website",
+      url,
+      siteName: `${COUPLE} Wedding`,
       locale: "vi_VN",
+      images: [OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE.url],
     },
   };
 }
