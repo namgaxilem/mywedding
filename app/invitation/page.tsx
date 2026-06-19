@@ -24,7 +24,7 @@ export default function InvitationListPage() {
 
   return (
     <div className="min-h-screen bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${preweddingImg(PREWEDDING_CONFIG.coverImage)})` }}>
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="fixed inset-0 bg-black/40 z-0" />
 
       <div className="relative z-10 min-h-screen overflow-y-auto">
         <div className="max-w-4xl mx-auto py-12 px-4">
@@ -65,10 +65,11 @@ export default function InvitationListPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
                   whileHover={{ y: -5 }}
+                  className="h-full"
                 >
                   <Link
                     href={`/invitation/${invitation.id}`}
-                    className="block bg-white/95 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-white/30 hover:border-[var(--color-primary)]"
+                    className="flex h-full min-h-[136px] flex-col justify-center bg-white/95 backdrop-blur-sm rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-white/30 hover:border-[var(--color-primary)]"
                   >
                     <div className="p-6 text-center">
                       <p className="text-sm text-[var(--color-text-muted)]">

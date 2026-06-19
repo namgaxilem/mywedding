@@ -17,6 +17,30 @@ export const INVITATIONS: Invitation[] = [
   { id: "minh-ben", name: "Minh Ben", pronoun: "Bạn", place: ["groom"] },
   { id: "minh-thuy", name: "Minh Thúy", pronoun: "Bạn", place: ["groom"] },
   { id: "phuc-an", name: "Phúc Ân", pronoun: "Bạn", place: ["groom"] },
+
+  { id: "thien-luan", name: "Thiên Luân", pronoun: "Bạn", place: ["groom"] },
+  { id: "son-lam", name: "Sơn Lâm", pronoun: "Bạn", place: ["groom"] },
+
+  { id: "tuyen", name: "Tuyên", pronoun: "Bạn", place: ["groom"] },
+  { id: "nhan", name: "Nhân", pronoun: "Em", place: ["groom"] },
+  { id: "tu", name: "Tú", pronoun: "Em", place: ["groom"] },
+  { id: "huy", name: "Huy", pronoun: "Em", place: ["groom"] },
+  { id: "dat-duong", name: "Đạt Dương", pronoun: "Em", place: ["groom"] },
+  { id: "cuc", name: "Cúc", pronoun: "Anh", place: ["groom"] },
+  { id: "lam", name: "Lâm", pronoun: "Em", place: ["groom"] },
+  { id: "thu", name: "Thư", pronoun: "Em", place: ["groom"] },
+  { id: "truong", name: "Trường", pronoun: "Anh", place: ["groom"] },
+
+  { id: "phong", name: "Phong", pronoun: "Bạn", place: ["groom"] },
+  { id: "hoang", name: "Hoàng", pronoun: "Bạn", place: ["groom"] },
+  { id: "thanh-tri", name: "Thành Trí", pronoun: "Bạn", place: ["groom"] },
+  { id: "bao", name: "Bảo", pronoun: "Bạn", place: ["groom"] },
+  { id: "hung", name: "Hưng", pronoun: "Bạn", place: ["groom"] },
+  { id: "van", name: "Văn", pronoun: "Bạn", place: ["groom"] },
+
+  { id: "a-tri", name: "Tri", pronoun: "Anh", place: ["groom"] },
+  { id: "khai", name: "Khải", pronoun: "Bạn", place: ["groom"] },
+  { id: "duy", name: "Duy", pronoun: "Bạn", place: ["groom"] },
 ];
 
 export function getInvitationById(id: string): Invitation | undefined {

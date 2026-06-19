@@ -424,7 +424,7 @@ export default function InvitationDetailPage({ params }: InvitationPageProps) {
                             alt={WEDDING_CONFIG.groom.name}
                             width={96}
                             height={96}
-                            className="object-cover w-full h-full"
+                            className="object-cover object-top w-full h-full"
                           />
                         </div>
                         <h3 className="font-['Great_Vibes'] text-2xl md:text-3xl text-[var(--color-primary)]">
@@ -442,7 +442,7 @@ export default function InvitationDetailPage({ params }: InvitationPageProps) {
                             alt={WEDDING_CONFIG.bride.name}
                             width={96}
                             height={96}
-                            className="object-cover w-full h-full"
+                            className="object-cover object-top w-full h-full"
                           />
                         </div>
                         <h3 className="font-['Great_Vibes'] text-2xl md:text-3xl text-[var(--color-primary)]">
