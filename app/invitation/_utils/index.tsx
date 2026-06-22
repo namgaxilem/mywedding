@@ -107,10 +107,10 @@ export const INVITATIONS: Invitation[] = [
     host: "family",
   },
   { id: "anh-hung-ha-noi", name: "Hùng", pronoun: "Anh", place: ["groom"] },
-  { id: "long-ha-noi", name: "Long Hà Nội", pronoun: "Bạn", place: ["groom"] },
-  { id: "tho-ha-noi", name: "Thơ Hà Nội", pronoun: "Em", place: ["groom"] },
-  { id: "minh-ha-noi", name: "Minh Hà Nội", pronoun: "Em", place: ["groom"] },
-  { id: "duc-ha-noi", name: "Đức Hà Nội", pronoun: "Em", place: ["groom"] },
+  { id: "long-ha-noi", name: "Long", pronoun: "Bạn", place: ["groom"] },
+  { id: "tho-ha-noi", name: "Thơ", pronoun: "Em", place: ["groom"] },
+  { id: "minh-ha-noi", name: "Minh", pronoun: "Em", place: ["groom"] },
+  { id: "duc-ha-noi", name: "Đức", pronoun: "Em", place: ["groom"] },
   { id: "anh-thang-ha-noi", name: "Thắng", pronoun: "Anh", place: ["groom"] },
 ];
 
