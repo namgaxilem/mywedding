@@ -106,12 +106,12 @@ export const INVITATIONS: Invitation[] = [
     place: ["bride"],
     host: "family",
   },
-  { id: "anh-hung-ha-noi", name: "Anh Hùng", pronoun: "Anh", place: ["groom"] },
+  { id: "anh-hung-ha-noi", name: "Hùng", pronoun: "Anh", place: ["groom"] },
   { id: "long-ha-noi", name: "Long Hà Nội", pronoun: "Bạn", place: ["groom"] },
   { id: "tho-ha-noi", name: "Thơ Hà Nội", pronoun: "Em", place: ["groom"] },
   { id: "minh-ha-noi", name: "Minh Hà Nội", pronoun: "Em", place: ["groom"] },
   { id: "duc-ha-noi", name: "Đức Hà Nội", pronoun: "Em", place: ["groom"] },
-  { id: "anh-thang-ha-noi", name: "Anh Thắng", pronoun: "Anh", place: ["groom"] },
+  { id: "anh-thang-ha-noi", name: "Thắng", pronoun: "Anh", place: ["groom"] },
 ];
 
 export function getInvitationById(id: string): Invitation | undefined {
