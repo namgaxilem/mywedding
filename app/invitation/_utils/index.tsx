@@ -86,6 +86,11 @@ export const INVITATIONS: Invitation[] = [
   { id: "khai", name: "Khải", pronoun: "Bạn", place: ["groom"] },
   { id: "duy", name: "Duy", pronoun: "Bạn", place: ["groom"] },
 
+  { id: "thao-vy", name: "Thảo Vy", pronoun: "Bạn", place: ["bride"] },
+  { id: "cu-cu", name: "Cu Cu", pronoun: "Bạn", place: ["bride"] },
+  { id: "my-duyen", name: "Mỹ Duyên", pronoun: "Bạn", place: ["bride"] },
+  { id: "van-hieu", name: "Văn Hiếu", pronoun: "Bạn", place: ["bride"] },
+
   // Nha gai
   {
     id: "anh-chi-nhuong-thao",
@@ -101,6 +106,12 @@ export const INVITATIONS: Invitation[] = [
     place: ["bride"],
     host: "family",
   },
+  { id: "anh-hung-ha-noi", name: "Anh Hùng", pronoun: "Anh", place: ["groom"] },
+  { id: "long-ha-noi", name: "Long Hà Nội", pronoun: "Em", place: ["groom"] },
+  { id: "tho-ha-noi", name: "Thơ Hà Nội", pronoun: "Em", place: ["groom"] },
+  { id: "minh-ha-noi", name: "Minh Hà Nội", pronoun: "Em", place: ["groom"] },
+  { id: "duc-ha-noi", name: "Đức Hà Nội", pronoun: "Em", place: ["groom"] },
+  { id: "anh-thang-ha-noi", name: "Anh Thắng", pronoun: "Anh", place: ["groom"] },
 ];
 
 export function getInvitationById(id: string): Invitation | undefined {

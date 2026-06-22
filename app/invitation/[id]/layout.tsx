@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import { WEDDING_CONFIG } from "@/lib/constants";
 import { getInvitationById } from "../_utils";
 
+function getDateForInvitation(place: string[]): string {
+  const hasBride = place.includes("bride");
+  const hasGroom = place.includes("groom");
+  if (hasBride && hasGroom) return `${WEDDING_CONFIG.events.ceremony.date} & ${WEDDING_CONFIG.events.reception.date}`;
+  if (hasBride) return WEDDING_CONFIG.events.ceremony.date;
+  return WEDDING_CONFIG.events.reception.date;
+}
+
 interface LayoutProps {
   children: React.ReactNode;
   params: Promise<{ id: string }>;
@@ -27,7 +35,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   const guest = `${invitation.pronoun} ${invitation.name}`;
   const title = `Thiệp Mời ${guest} | ${COUPLE}`;
-  const description = `Trân trọng kính mời ${guest} đến dự lễ cưới của ${COUPLE} - ${WEDDING_CONFIG.weddingDateDisplay}`;
+  const date = getDateForInvitation(invitation.place);
+  const description = `Trân trọng kính mời ${guest} đến dự lễ cưới của ${COUPLE} - ${date}`;
   const url = `/invitation/${invitation.id}`;
 
   return {

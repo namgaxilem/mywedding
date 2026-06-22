@@ -38,9 +38,11 @@ export default function StorySection() {
             </h2>
 
             {/* Narrative */}
-            <p className="text-[var(--color-text-secondary)] leading-[1.9] text-sm md:text-base text-justify">
-              {story.narrative}
-            </p>
+            <div className="text-[var(--color-text-secondary)] leading-[1.9] text-sm md:text-base text-justify space-y-4">
+              {story.narrative.split('\n\n').map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
           </motion.div>
 
           {/* Right: Photo Collage */}
