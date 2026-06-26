@@ -21,6 +21,37 @@ export interface Invitation {
 
 export const INVITATIONS: Invitation[] = [
   {
+    id: "chi-phuong-anh-cuong",
+    name: "Gia đình",
+    pronoun: "Anh Chị Phương Cường",
+    place: ["groom"],
+  },
+  {
+    id: "chi-phuong-anh-cuong",
+    name: "Gia đình",
+    pronoun: "Anh Chị Phương Cường",
+    place: ["groom"],
+  },
+  {
+    id: "chi-hoai-linh",
+    name: "Linh",
+    pronoun: "Chị",
+    place: ["groom"],
+  },
+  {
+    id: "em-duc-tai",
+    name: "Tài",
+    pronoun: "Em",
+    place: ["groom"],
+  },
+  {
+    id: "em-van-nhuan",
+    name: "Nhuận",
+    pronoun: "Em",
+    place: ["groom"],
+  },
+
+  {
     id: "nghia-phuong",
     name: "Hiếu Nghĩa - Thúy Phượng",
     pronoun: "2 Vợ Chồng Bạn",
@@ -49,6 +80,18 @@ export const INVITATIONS: Invitation[] = [
   {
     id: "dao-huyen-thanh-phuong",
     name: "Đào Huyền Thanh Phương",
+    pronoun: "Bạn",
+    place: ["groom"],
+  },
+  {
+    id: "thuc-anh",
+    name: "Thục Anh",
+    pronoun: "Bạn",
+    place: ["groom"],
+  },
+  {
+    id: "hoang-anh",
+    name: "Hoàng Anh",
     pronoun: "Bạn",
     place: ["groom"],
   },
