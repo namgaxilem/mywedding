@@ -130,6 +130,7 @@ export const INVITATIONS: Invitation[] = [
   { id: "ng-kiet", name: "Kiệt", pronoun: "Em", place: ["bride"] },
   { id: "an-han", name: "Anh An Chị Hân", pronoun: "Gia đình", place: ["bride"] },
   { id: "ng-son", name: "Sơn", pronoun: "Em", place: ["bride"] },
+  { id: "anh-long", name: "Long", pronoun: "Anh", place: ["bride"] },
 ];
 
 export function getInvitationById(id: string): Invitation | undefined {
