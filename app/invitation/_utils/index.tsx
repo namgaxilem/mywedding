@@ -113,6 +113,23 @@ export const INVITATIONS: Invitation[] = [
   { id: "minh-ha-noi", name: "Minh", pronoun: "Em", place: ["groom"] },
   { id: "duc-ha-noi", name: "Đức", pronoun: "Em", place: ["groom"] },
   { id: "anh-thang-ha-noi", name: "Thắng", pronoun: "Gia đình Anh", place: ["groom"] },
+
+  // Nha gai - moi them
+  { id: "vc-quyen", name: "Quyên", pronoun: "Vợ chồng Em", place: ["bride"] },
+  { id: "uyen-tem", name: "Uyên (Tẻm)", pronoun: "Em", place: ["bride"] },
+  { id: "thien-bo", name: "Thiện (Bô)", pronoun: "Em", place: ["bride"] },
+  { id: "vc-tue", name: "Tuệ", pronoun: "Vợ chồng Em", place: ["bride"] },
+  { id: "ng-tan", name: "Tân", pronoun: "Em", place: ["bride"] },
+  { id: "tinh-diem", name: "Anh Tình Chị Diễm", pronoun: "Gia đình", place: ["bride"] },
+  { id: "loc-linh", name: "Anh Lộc Chị Linh", pronoun: "Gia đình", place: ["bride"] },
+  { id: "phuoc-van", name: "Anh Phước Chị Vân", pronoun: "Gia đình", place: ["bride"] },
+  { id: "vu-thu", name: "Anh Vũ Chị Thư", pronoun: "Gia đình", place: ["bride"] },
+  { id: "luong-quy", name: "Anh Lương Chị Quý", pronoun: "Gia đình", place: ["bride"] },
+  { id: "vuong-linh", name: "Anh Vương Chị Linh", pronoun: "Gia đình", place: ["bride"] },
+  { id: "huy-tuyet", name: "Anh Huy Chị Tuyết", pronoun: "Gia đình", place: ["bride"] },
+  { id: "ng-kiet", name: "Kiệt", pronoun: "Em", place: ["bride"] },
+  { id: "an-han", name: "Anh An Chị Hân", pronoun: "Gia đình", place: ["bride"] },
+  { id: "ng-son", name: "Sơn", pronoun: "Em", place: ["bride"] },
 ];
 
 export function getInvitationById(id: string): Invitation | undefined {
