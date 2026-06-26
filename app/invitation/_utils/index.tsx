@@ -142,6 +142,8 @@ export const INVITATIONS: Invitation[] = [
   { id: "my-duyen", name: "Mỹ Duyên", pronoun: "Bạn", place: ["bride"] },
   { id: "van-hieu", name: "Văn Hiếu", pronoun: "Bạn", place: ["bride"] },
 
+  { id: "fong-choy", name: "Thanh Phong", pronoun: "Em", place: ["bride"] },
+
   // Nha gai
   {
     id: "anh-chi-nhuong-thao",
