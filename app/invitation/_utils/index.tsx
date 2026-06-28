@@ -21,15 +21,9 @@ export interface Invitation {
 
 export const INVITATIONS: Invitation[] = [
   {
-    id: "chi-phuong-anh-cuong",
-    name: "Gia đình",
-    pronoun: "Anh Chị Phương Cường",
-    place: ["groom"],
-  },
-  {
-    id: "chi-phuong-anh-cuong",
-    name: "Gia đình",
-    pronoun: "Anh Chị Phương Cường",
+    id: "gd-chi-phuong-cuong",
+    name: "Anh Chị Phương Cường",
+    pronoun: "Gia đình",
     place: ["groom"],
   },
   {
