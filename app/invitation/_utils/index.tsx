@@ -98,6 +98,7 @@ export const INVITATIONS: Invitation[] = [
 
   { id: "hoang-phuc", name: "Phúc", pronoun: "Bạn", place: ["groom"] },
   { id: "khanh-duy", name: "Duy", pronoun: "Bạn", place: ["groom"] },
+  { id: "sean", name: "Sean", pronoun: "Bạn", place: ["groom"] },
   { id: "thanh-phong", name: "Phong", pronoun: "Bạn", place: ["groom"] },
   { id: "lu-minh-hoang", name: "Hoàng", pronoun: "Bạn", place: ["groom"] },
   { id: "khoa-acoustic", name: "Khoa", pronoun: "Bạn", place: ["groom"] },
